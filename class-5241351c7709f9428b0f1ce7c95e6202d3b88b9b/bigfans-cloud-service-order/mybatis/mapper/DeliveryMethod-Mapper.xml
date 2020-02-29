@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.orderservice.dao.impl.DeliveryMethodDAOImpl">
+	
+	<select id="list" parameterType="map" resultType="DeliveryMethod">
+		SELECT 
+			id as id
+			,name as name
+			,details as details
+			,tips as tips
+			,order_num as orderNum
+		FROM
+			DeliveryMethod
+		<where>
+			deleted = 0
+		</where>
+		ORDER BY order_num
+	</select>
+	
+	<select id="load" parameterType="map" resultType="DeliveryMethod">
+		SELECT 
+			id as id
+			,name as name
+			,details as details
+			,tips as tips
+			,order_num as orderNum
+		FROM
+			DeliveryMethod
+		<where>
+			deleted = 0
+			<if test="id != null">
+			AND id = #{id}
+			</if>
+		</where>
+	</select>
+
+</mapper>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.paymentservice.dao.impl.OrderDAOImpl">
+
+	<sql id="basic_columns">
+		o.id AS id
+		,o.create_date AS createDate
+		,o.update_date AS updateDate
+		,o.user_id AS userId
+		,o.prod_total_quantity AS prodTotalQuantity
+		,o.prod_total_price AS prodTotalPrice
+		,o.total_price AS totalPrice
+		,o.gained_point AS gainedPoint
+		,o.used_point AS usedPoint
+		,o.payment_id AS paymentId
+		,o.paymethod_code AS paymethodCode
+		,o.freight AS freight
+	</sql>
+
+	<select id="load" parameterType="map" resultType="Order">
+		select
+		<include refid="basic_columns"></include>
+		from
+		`Order` o
+		<where>
+			<if test="id != null" >
+				id = #{id}
+			</if>
+			<if test="userId != null">
+				AND user_id = #{userId}
+			</if>
+			AND deleted = 0
+		</where>
+	</select>
+	
+</mapper>

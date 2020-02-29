@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.paymentservice.dao.impl.PaymentDAOImpl">
+	
+	<select id="load" parameterType="map" resultType="Payment">
+		SELECT 
+			id as id
+			,order_id as id
+			,buyer_id as buyerId
+			,type as type
+			,status as status
+			,pay_amount as payAmount
+		FROM
+			Payment
+		<where>
+			deleted = 0
+			<if test="userId != null">
+			AND buyer_id = #{userId}
+			</if>
+			<if test="orderId != null">
+			AND order_id = #{orderId}
+			</if>
+			<if test="tradeNo != null">
+			AND trade_no = #{tradeNo}
+			</if>
+		</where>
+	</select>
+
+</mapper>

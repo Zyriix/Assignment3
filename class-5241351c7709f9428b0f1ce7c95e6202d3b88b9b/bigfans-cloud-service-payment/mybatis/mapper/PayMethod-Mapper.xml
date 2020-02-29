@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.paymentservice.dao.impl.PayMethodDAOImpl">
+
+	<sql id="base_clolumns">
+		pm.id as id
+		,pm.parent_id as parentId
+		,pm.name as name
+		,pm.code as code
+		,pm.url as url
+		,pm.is_primary as isPrimary
+		,pm.order_num as orderNum
+		,pm.icon as icon
+	</sql>
+	
+	<select id="list" parameterType="map" resultType="PayMethod">
+		SELECT 
+			<include refid="base_clolumns"/>
+		FROM
+			PayMethod pm
+		<where>
+			pm.deleted = 0
+			<if test="parentId != null">
+			AND pm.parent_id = #{parentId}
+			</if>
+		</where>
+		ORDER BY pm.order_num
+	</select>
+
+	<select id="load" parameterType="map" resultType="PayMethod">
+		SELECT 
+			<include refid="base_clolumns"/>
+		FROM
+			PayMethod pm
+		<where>
+			pm.deleted = 0
+			<if test="id != null">
+			AND pm.id = #{id}
+			</if>
+			<if test="code != null">
+			AND pm.code = #{code}
+			</if>
+		</where>
+		ORDER BY pm.order_num
+	</select>
+	
+	<select id="listTopMethods" parameterType="map" resultType="PayMethod">
+		SELECT 
+			<include refid="base_clolumns"/>
+		FROM
+			PayMethod pm
+		<where>
+			pm.deleted = 0
+			AND (pm.parent_id is null or pm.parent_id = '')
+		</where>
+		ORDER BY pm.order_num
+	</select>
+</mapper>

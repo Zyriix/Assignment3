@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.orderservice.dao.impl.OrderItemDAOImpl">
+	
+	<select id="list" parameterType="map" resultType="OrderItem">
+		select 
+			t1.id
+			,t1.create_date as createDate
+			,t1.update_date as updateDate
+			,t1.deleted as deleted
+			,t1.user_id as userId
+			,t1.order_id as orderId
+			,t1.prod_id as prodId
+			,t1.deal_price as dealPrice
+			,t1.deal_subtotal AS dealSubTotal
+			,t1.quantity as quantity
+			,t1.comment_status as commentStatus
+			,t2.name as prodName
+			,t2.image_path as prodImg
+			,t2.pg_id as pgId
+		from
+			OrderItem t1
+			join Product t2 on (t1.prod_id = t2.id)
+		<where>
+			<if test="userId != null and userId != '' ">
+				t1.user_id = #{userId}
+			</if>
+			<if test="orderId != null and orderId != '' ">
+			AND t1.order_id = #{orderId}
+			</if>
+			AND t1.deleted = 0
+			<if test="status != null">
+				AND t1.comment_status = #{status}
+			</if>
+		</where>
+		order by t1.create_date desc
+	</select>
+</mapper>

@@ -347,6 +347,124 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "path": "bigfans-cloud-service-notification", // 模块目录相对于代码仓根目录的路径
+                            "language": "Java", // Java
+                            "packages": [ // 这个模块中包含的所有java的包
+                                {
+                                    "name": "com.bigfans.notificationservice", // 包名
+                                    "dependency": [ // 依赖了哪些包，只需要填写当前项目中的即可，无需要填写所依赖的第三方包
+                                        "com.bigfans.framework",
+                                        "com.bigfans.framework.kafka" // 包名
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.notificationservice.config",
+                                    "dependency": [
+                                        "com.bigfans.framework.cache",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.framework.plugins",
+                                        "com.bigfans.framework.redis"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.notificationservice.listener",
+                                    "dependency": [
+                                        "com.bigfans.model.event.notification",
+                                        "com.bigfans.model.event.order",
+                                        "com.bigfans.model.event.payment",
+                                        "com.bigfans.model.event.shipping",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.framework.plugins"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "path": "bigfans-cloud-service-shipping",
+                            "language": "Java",
+                            "packages": [
+                                {
+                                    "name": "com.bigfans.shippingservice",
+                                    "dependency": [
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.shippingservice.api.clients",
+                                    "dependency": [
+                                        "com.bigfans.shippingservice.model",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.framework.web"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.shippingservice.config",
+                                    "dependency": [
+                                        "com.bigfans.framework.cache",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.framework.redis"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.shippingservice.dao",
+                                    "dependency": [
+                                        "com.bigfans.shippingservice.model",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.shippingservice.dao.impl",
+                                    "dependency": [
+                                        "com.bigfans.shippingservice.dao",
+                                        "com.bigfans.shippingservice.model",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.shippingservice.listener",
+                                    "dependency": [
+                                        "com.bigfans.model.event.payment",
+                                        "com.bigfans.shippingservice.api.clients",
+                                        "com.bigfans.shippingservice.model",
+                                        "com.bigfans.shippingservice.service",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.framework.kafka"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.shippingservice.model",
+                                    "dependency": [
+                                        "com.bigfans.shippingservice.model.entity"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.shippingservice.model.entity",
+                                    "dependency": [
+                                        "com.bigfans.framework.model"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.shippingservice.service",
+                                    "dependency": [
+                                        "com.bigfans.shippingservice.model",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.shippingservice.service.impl",
+                                    "dependency": [
+                                        "com.bigfans.shippingservice.dao",
+                                        "com.bigfans.shippingservice.model",
+                                        "com.bigfans.shippingservice.service",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     "microservices": [ // 包含哪些微服务
@@ -530,6 +648,72 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "name": "bigfans-cloud-service-notification", // 微服务的名字，用于唯一标识这个系统中的微服务
+                            "path": "bigfans-cloud-service-notification", // 微服务所在的目录位置（相对于代码仓）
+                            "otherPaths":[ // 一个微服务也可能会被拆分成多个模块实现，可能会对应到多个目录
+                            ],
+                            "interfaces":[  // 微服务对外提供的接口
+                            ],
+                            "call":[ // 这个微服务调用了哪些微服务的哪些接口
+                            ],
+                            // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件
+                            "publish":[
+                            ],
+                            "subscribe":[
+                                {
+                                    "name": "OrderCreatedEvent", //topic或者事件的名字
+                                    "filePaths": [ // 订阅这个topic或者事件的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-notification/src/main/java/com/bigfans/notificationservice/listener/OrderListener.java"
+                                    ]
+                                },
+                                {
+                                    "name": "OrderPaidEvent",
+                                    "filePaths": [
+                                        "bigfans-cloud-service-notification/src/main/java/com/bigfans/notificationservice/listener/OrderListener.java"
+                                    ]
+                                },
+                                {
+                                    "name": "ShippingCreatedEvent",
+                                    "filePaths": [
+                                        "bigfans-cloud-service-notification/src/main/java/com/bigfans/notificationservice/listener/ShippingListener.java"
+                                    ]
+                                },
+                                {
+                                    "name": "RequestVCodeEvent",
+                                    "filePaths": [
+                                        "bigfans-cloud-service-notification/src/main/java/com/bigfans/notificationservice/listener/UserListener.java"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "name": "bigfans-cloud-service-shipping",
+                            "path": "bigfans-cloud-service-shipping",
+                            "otherPaths":[
+                            ],
+                            "interfaces": [
+                            ],
+                            "call": [
+                                {
+                                    "targetMicroservices": "bigfans-cloud-service-order", // 目标微服务的name
+                                    "interfaceName": "GET:/orders/{id}", // 所调用的接口的name
+                                    "positions": [// 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-shipping/src/main/java/com/bigfans/shippingservice/api/clients/OrderServiceClient.java" 
+                                    ]
+                                }
+                            ],
+                            "publish": [
+                            ],
+                            "subscribe": [
+                                {
+                                    "name": "OrderPaidEvent",
+                                    "filePaths": [
+                                        "bigfans-cloud-service-shipping/src/main/java/com/bigfans/shippingservice/listener/OrderListener.java"
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     "topics": [ // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件
@@ -537,6 +721,58 @@
                             "name": "xxx", //topic或者事件的名字
                             "filePaths": [], // 定义这个topic或者事件的文件位置，相对于代码仓的路径，可能会涉及多个文件
                             "inputParamStruct": { // 输入数据的格式，同interfaces中的数据结构
+                            }
+                        },
+                        {
+                            "name": "OrderCreatedEvent", //topic或者事件的名字
+                            "filePaths": [
+                                "bigfans-cloud-base/src/main/java/com/bigfans/model/event/order/OrderCreatedEvent.java"
+                            ], // 定义这个topic或者事件的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                            "inputParamStruct": { // 输入数据的格式，同interfaces中的数据结构
+                                "orderId": {
+                                    "type": "Basic",
+                                    "name": "String"
+                                },
+                            }
+                        },
+                        {
+                            "name": "OrderPaidEvent",
+                            "filePaths": [
+                                "bigfans-cloud-base/src/main/java/com/bigfans/model/event/payment/OrderPaidEvent.java"
+                            ],
+                            "inputParamStruct": {
+                                "orderId": {
+                                    "type": "Basic",
+                                    "name": "String"
+                                },
+                            }
+                        },
+                        {
+                            "name": "ShippingCreatedEvent",
+                            "filePaths": [
+                                "bigfans-cloud-base/src/main/java/com/bigfans/model/event/shipping/ShippingCreatedEvent.java"
+                            ],
+                            "inputParamStruct": {
+                                "id": {
+                                    "type": "Basic",
+                                    "name": "String"
+                                }
+                            }
+                        },
+                        {
+                            "name": "RequestVCodeEvent",
+                            "filePaths": [
+                                "bigfans-cloud-base/src/main/java/com/bigfans/model/event/notification/RequestVCodeEvent.java"
+                            ],
+                            "inputParamStruct": {
+                                "mobile": {
+                                    "type": "Basic",
+                                    "name": "String"
+                                },
+                                "code": {
+                                    "type": "Basic",
+                                    "name": "String"
+                                }
                             }
                         }
                     ]

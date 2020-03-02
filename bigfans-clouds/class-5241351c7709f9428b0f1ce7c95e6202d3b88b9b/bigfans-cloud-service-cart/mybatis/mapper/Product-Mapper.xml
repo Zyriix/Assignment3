@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.cartservice.dao.impl.ProductDAOImpl">
+	
+	<sql id="base_columns">
+		p.id AS id
+	   ,p.create_date AS createDate
+	   ,p.update_date AS updateDate
+	   ,p.name AS name
+	   ,p.price AS price
+	   ,concat(p.image_server , p.image_path) AS imagePath
+	</sql>
+	
+	<!-- 查询商品 -->
+	<select id="load" parameterType="String" resultType="Product">
+		SELECT 
+			<include refid="base_columns"/>
+		FROM
+			Product p
+		<where>
+			p.id = #{id}
+			AND p.deleted = 0
+		</where>
+	</select>
+	
+	<select id="list" parameterType="map" resultType="Product">
+		<if test="name != null and name != '' ">
+			<bind name="namepattern" value="'%' + _parameter.name + '%'"/>
+		</if>
+		SELECT 
+			<include refid="base_columns"/>
+		   ,b.id AS brandId
+		   ,b.name AS brandName
+		   ,c.id AS categoryId
+		FROM
+			Product p
+			JOIN Category c on (p.category_id = c.id) 
+			LEFT JOIN Brand b on (p.brand_id = b.id AND b.deleted = 0)
+		<where>
+			p.deleted = 0
+			AND c.deleted = 0
+			<if test="onSale == true">
+				AND p.is_onsale = 1
+			</if>
+			<!-- 如果根据分类查询,那么查询出当前分类下所有子分类的商品 -->
+			<if test="categoryId != null and categoryId != '' ">
+				AND c.id IN (
+					select id 
+					from Category c1
+					where 
+					c1.deleted = 0
+					AND 
+					(
+						c1.parent_id = #{categoryId}
+						OR c1.id = #{categoryId}
+					)
+				)
+			</if>
+			<if test="categoryIds != null">
+				AND c.id IN
+				(
+				<foreach collection="categoryIds" item="categoryId" separator=",">
+					#{categoryId}
+				</foreach>
+				)
+			</if>
+			<if test="brandId != null and brandId != '' ">
+				AND p.brand_id = #{brandId}
+			</if>
+			<if test="hotSale == true">
+				AND p.is_hot = 1
+			</if>
+			<if test="name != null and name != '' ">
+				AND p.name like #{namepattern}
+			</if>
+		</where>
+		ORDER BY p.update_date desc
+	</select>
+	
+	<update id="updateHits" parameterType="String">
+		update Prodduct set hits = hits + 1 where id = #{pid} and deleted = 0
+	</update>
+	
+</mapper>

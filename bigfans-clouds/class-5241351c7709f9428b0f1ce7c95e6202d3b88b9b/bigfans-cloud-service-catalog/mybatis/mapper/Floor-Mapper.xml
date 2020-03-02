@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.FloorDAOImpl">
+	<!-- <cache type="org.mybatis.caches.memcached.MemcachedCache" /> -->
+
+	<select id="list" parameterType="Floor" resultType="Floor">
+		SELECT 
+		  f.id AS id
+		  ,f.title AS title
+		  ,f.background_img AS backgroundImg
+		  ,f.order_num AS orderNum
+		  ,f.category_id AS categoryId 
+		FROM
+		  Floor f 
+		WHERE 
+		  deleted = 0 
+		ORDER BY f.order_num 
+	</select>
+	
+</mapper>

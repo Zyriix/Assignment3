@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.StockLogDAOImpl">
+
+    <sql id="basic_columns">
+        log.id AS id
+        log.create_date AS createDate,
+        log.update_date AS updateDate,
+        log.order_id AS id,
+        log.user_id AS userId,
+        log.prod_id AS prodId,
+        log.direction AS direction
+    </sql>
+
+    <select id="load" parameterType="map" resultType="StockLog">
+        select
+        <include refid="basic_columns"/>
+        from
+        Stock_Log log
+        <where>
+            deleted = 0
+            <if test="id != null and id != '' ">
+                AND log.id = #{id}
+            </if>
+            <if test="id !=null and id != '' ">
+                AND log.order_id = #{id}
+            </if>
+            <if test="userId !=null and userId != '' ">
+                AND log.user_id = #{userId}
+            </if>
+            <if test="prodId != null and prodId != '' ">
+                AND log.prod_id = #{prodId}
+            </if>
+            <if test="direction != null and direction != '' ">
+                AND log.direction = #{direction}
+            </if>
+        </where>
+    </select>
+
+    <select id="list" parameterType="map" resultType="StockLog">
+        select
+        <include refid="basic_columns"/>
+        from
+        Stock_Log log
+        <where>
+            deleted = 0
+            <if test="id !=null and id != '' ">
+                AND log.order_id = #{id}
+            </if>
+            <if test="userId !=null and userId != '' ">
+                AND log.user_id = #{userId}
+            </if>
+            <if test="prodId != null and prodId != '' ">
+                AND log.prod_id = #{prodId}
+            </if>
+            <if test="direction != null and direction != '' ">
+                AND log.direction = #{direction}
+            </if>
+        </where>
+    </select>
+
+    <select id="count" parameterType="map" resultType="Integer">
+        select
+        count(1)
+        from
+        Stock_Log log
+        <where>
+            deleted = 0
+            <if test="id !=null and id != '' ">
+                AND log.order_id = #{id}
+            </if>
+            <if test="userId !=null and userId != '' ">
+                AND log.user_id = #{userId}
+            </if>
+            <if test="prodId != null and prodId != '' ">
+                AND log.prod_id = #{prodId}
+            </if>
+            <if test="direction != null and direction != '' ">
+                AND log.direction = #{direction}
+            </if>
+        </where>
+    </select>
+
+</mapper>

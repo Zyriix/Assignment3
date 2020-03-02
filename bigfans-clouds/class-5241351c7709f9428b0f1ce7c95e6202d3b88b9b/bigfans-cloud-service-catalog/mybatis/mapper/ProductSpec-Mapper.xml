@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.ProductSpecDAOImpl">
+
+	<sql id="base_columns">
+		ps.id AS id
+		,ps.deleted AS deleted
+		,ps.create_date AS createDate
+		,ps.update_date AS updateDate
+		,ps.prod_id AS prodId
+		,ps.pg_id AS pgId
+		,ps.option_id AS optionId
+		,ps.value_id AS valueId
+		,ps.input_type AS inputType
+	</sql>
+	
+	<select id="load" parameterType="map" resultType="ProductSpec">
+		select 
+			<include refid="base_columns"/>
+			,so.name AS `option`
+			,sv.value AS `value`
+		from
+			Product_Spec ps
+			join SpecOption so on (ps.option_id = so.id)
+			join SpecValue sv on (ps.value_id = sv.id)
+		<where>
+			ps.deleted = 0
+			<if test="id !=null"> 
+				AND ps.id = #{id}
+			</if>
+			<if test="pgId != null and pgId != '' ">
+				AND ps.pg_id = #{pgId}
+			</if>
+			<if test="optionId != null and optionId != '' ">
+				AND ps.option_id = #{optionId}
+			</if>
+			<if test="valueId != null and valueId != '' ">
+				AND ps.value_id = #{valueId}
+			</if>
+		</where>
+	</select>
+	
+	<select id="list" parameterType="map" resultType="ProductSpec">
+		select 
+			<include refid="base_columns"/>
+			,so.name AS `option`
+			,sv.value AS value
+		from
+			Product_Spec ps
+			join SpecOption so on (ps.option_id = so.id)
+			join SpecValue sv on (ps.value_id = sv.id)
+		<where>
+			ps.deleted = 0
+			<if test="prodId != null and prodId != '' ">
+			AND ps.prod_id = #{prodId}
+			</if>
+			<if test="idList !=null"> 
+				AND ps.id in 
+				<foreach collection="idList" item="id" separator="," open="(" close=")">
+					#{id}
+				</foreach>
+			</if>
+			<if test="optionId != null and optionId != '' ">
+				AND ps.option_id = #{optionId}
+			</if>
+		</where>
+	</select>
+
+</mapper>

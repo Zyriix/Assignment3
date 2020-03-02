@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.SkuDAOImpl">
+
+	<sql id="basic_columns">
+		sku.id AS id
+		,sku.prod_id AS prodId
+		,sku.pg_id AS pgId
+		,sku.sku_key AS skuKey
+		,sku.opt_key AS optKey
+		,sku.val_key AS valKey
+		,sku.stock AS stock
+		,sku.locked_stock AS lockedStock
+	</sql>
+
+	<select id="load" parameterType="map" resultType="SKU">
+		select
+			<include refid="basic_columns"/>
+		from
+			SKU sku
+		<where>
+			deleted = 0
+			<if test="id !=null and id != '' ">
+				AND sku.id = #{id}
+			</if>
+			<if test="pid !=null and pid != '' ">
+				AND sku.prod_id = #{pid}
+			</if>
+			<if test="skuKey != null and skuKey != '' ">
+				AND sku_key = #{skuKey}
+			</if>
+			<if test="valKey != null and valKey != '' ">
+				AND val_key = #{valKey}
+			</if>
+		</where>
+	</select>
+
+	<select id="list" parameterType="map" resultType="SKU">
+		select
+			<include refid="basic_columns"/>
+		from
+			SKU sku
+		<where>
+			deleted = 0
+			<if test="pgId !=null and pgId != '' ">
+				AND sku.pg_id = #{pgId}
+			</if>
+			<if test="pid !=null and pid != '' ">
+				AND sku.prod_id = #{pid}
+			</if>
+		</where>
+	</select>
+	
+</mapper>

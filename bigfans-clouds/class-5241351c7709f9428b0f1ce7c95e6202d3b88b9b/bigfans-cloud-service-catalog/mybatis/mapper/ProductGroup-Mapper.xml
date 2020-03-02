@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.ProductGroupDAOImpl">
+
+	<sql id="base_columns">
+		pg.id AS id
+		,pg.create_date AS createDate
+		,pg.update_date AS updateDate
+		,pg.sn AS productSn
+		,pg.name AS name
+		,pg.origin AS origin
+		,pg.category_id AS categoryId
+		,pg.brand_id AS brandId
+	</sql>
+
+	<!-- 查询商品组 -->
+	<select id="list" parameterType="map" resultType="ProductGroup">
+		select 
+			<include refid="base_columns"/>
+			,c.name AS categoryName
+			,b.name AS brandName
+		from 
+			ProductGroup pg 
+			JOIN Category c on (c.id = pg.category_id)
+			LEFT JOIN Brand b on (pg.brand_id = b.id and b.deleted=0)
+		<where>
+			pg.deleted = 0
+			and c.deleted = 0
+		</where>
+		order by pg.update_date desc
+	</select>
+	
+	<!-- 查询商品组 -->
+	<select id="load" parameterType="String" resultType="ProductGroup">
+		select 
+			<include refid="base_columns"/>
+			,c.name AS categoryName
+			,b.name AS brandName
+		from 
+			ProductGroup pg 
+			JOIN Category c on (c.id = pg.category_id)
+			LEFT JOIN Brand b on (pg.brand_id = b.id AND b.deleted=0)
+		<where>
+			pg.deleted = 0
+			AND pg.id = #{id}
+			AND c.deleted = 0
+		</where>
+	</select>
+	
+	<select id="listProductId" parameterType="String" resultType="String">
+		select 
+			p.id
+		from
+			ProductGroup pg 
+			JOIN Product p ON (pg.id = p.id)
+		<where>
+			pg.id = #{id}
+			AND pg.deleted = 0
+			AND p.deleted = 0
+		</where>
+	</select>
+
+	<select id="getDescription" parameterType="map" resultType="String">
+		select
+			pg.description
+		from
+			ProductGroup pg
+		<if test="prodId != null and prodId != '' ">
+			join Product prod on (pg.id = prod.id)
+		</if>
+		<where>
+			pg.deleted = 0
+			<if test="pgId != null and pgId != '' ">
+				AND pg.id = #{pgId}
+			</if>
+			<if test="prodId != null and prodId != '' ">
+				AND prod.id = #{prodId}
+			</if>
+		</where>
+	</select>
+	
+</mapper>

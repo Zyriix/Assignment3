@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.reviewservice.dao.impl.OrderItemSurveyDAOImpl">
+
+	<sql id="base_columns">
+		srv.id as id
+		,srv.create_date as createDate
+		,srv.update_date as updateDate
+		,srv.deleted as deleted
+		,srv.pg_id as pgId
+		,srv.prod_id as prodId
+		,srv.orderitem_id as orderItemId
+		,srv.order_id as orderId
+		,srv.prod_name as prodName
+		,srv.prod_img as prodImg
+		,srv.user_id as userId
+		,srv.price as price
+	</sql>
+
+	<select id="load" parameterType="map" resultType="OrderItemSurvey">
+		SELECT
+		<include refid="base_columns"/>
+		FROM
+		OrderItem_Survey srv
+		<where>
+			srv.deleted = 0
+			<if test="orderItemId != null and orderItemId != '' ">
+				AND srv.orderitem_id = #{orderItemId}
+			</if>
+			<if test="prodId != null and prodId != '' ">
+				AND srv.prod_id = #{prodId}
+			</if>
+		</where>
+	</select>
+
+	<select id="list" parameterType="map" resultType="OrderItemSurvey">
+		SELECT 
+			<include refid="base_columns"/>
+		FROM
+			OrderItem_Survey srv
+		<where>
+			srv.deleted = 0
+			<if test="orderId != null and orderId != '' ">
+				AND srv.order_id = #{orderId}
+			</if>
+			<if test="prodId != null and prodId != '' ">
+				AND srv.prod_id = #{prodId}
+			</if>
+			<if test="pgId != null and pgId != '' ">
+				AND srv.pg_id = #{pgId}
+			</if>
+		</where>
+	</select>
+
+	<delete id="delete" parameterType="map">
+		delete from OrderItem_Survey
+		<where>
+			<if test="orderItemId != null and orderItemId != '' ">
+				orderitem_id = #{orderItemId}
+			</if>
+			<if test="userId != null and userId != '' ">
+				AND user_id = #{userId}
+			</if>
+		</where>
+	</delete>
+	
+</mapper>

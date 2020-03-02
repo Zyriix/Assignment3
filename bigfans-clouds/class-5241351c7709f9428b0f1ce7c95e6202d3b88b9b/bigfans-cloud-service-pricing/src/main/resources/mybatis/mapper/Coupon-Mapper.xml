@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.pricingservice.dao.impl.CouponDAOImpl">
+
+	<sql id="base_columns">
+		c.`id` AS id
+		,c.`create_date` AS createDate
+		,c.`update_date` AS updateDate
+		,c.`deleted` AS deleted
+		,c.`name` AS name
+		,c.`condition` AS `condition`
+		,c.`money` AS money
+		,c.`amount` AS amount
+		,c.`distributing_type` AS distributingType
+		,c.`term_type` AS termType
+		,c.`start_time` AS startTime
+		,c.`end_time` AS endTime
+		,c.`effective_time` AS effectiveTime
+		,c.`expiry_time` AS expiryTime
+		,c.`term_days` AS termDays
+	</sql>
+	
+	
+	<select id="list" parameterType="map" resultType="Coupon">
+		select
+			<include refid="base_columns"/>
+			<if test="userId != null and userId != '' ">
+			,uc.total AS totalHold
+			</if>
+		from
+			Coupon c 
+			<if test="prodId != null and prodId != '' ">
+			JOIN Product_Coupon pc on (c.id = pc.coupon_id AND pc.deleted = 0)
+			</if>
+			<if test="userId != null and userId != '' ">
+			JOIN User_Coupon uc on (c.id = uc.coupon_id)
+			</if>
+		<where>
+			c.deleted = 0 
+			<if test="categoryId != null and categoryId != ''">
+			AND c.category_id = #{categoryId}
+			</if>
+			<if test="couponId != null and couponId != '' ">
+			AND c.id = #{couponId}
+			</if>
+			<if test="prodId != null and prodId != '' ">
+			AND pc.product_id = #{prodId}
+			</if>
+			<if test="userId != null and userId != '' ">
+			AND uc.user_id = #{userId}
+			</if>
+		</where>
+	</select>
+	
+	<update id="updateAmount" parameterType="map">
+		update Coupon c 
+		<if test="action == 'increase'">
+		set c.amount = c.amount + #{num}
+		</if>
+		<if test="action == 'decrease'">
+		set c.amount = c.amount - #{num}
+		</if>
+		<where>
+		c.deleted = 0
+		<if test="couponId != null and couponId != '' ">
+		AND c.id = #{couponId}
+		</if>
+		<if test="action == 'decrease'">
+		AND c.amount >=  #{num}
+		</if>
+		</where>
+	</update>
+	
+</mapper>

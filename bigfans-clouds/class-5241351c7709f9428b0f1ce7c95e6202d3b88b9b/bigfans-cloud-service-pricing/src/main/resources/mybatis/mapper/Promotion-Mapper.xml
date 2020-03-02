@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.pricingservice.dao.impl.PromotionDAOImpl">
+
+	<sql id="base_columns">
+		p.id AS id
+		,p.deleted AS deleted
+		,p.create_date AS createDate
+		,p.update_date AS updateDate
+		,p.name AS name
+		,p.scope AS scope
+		,p.type AS type
+		,p.code AS code
+		,p.`condition` AS `condition`
+		,p.`action` AS `action`
+		,p.limit_buy AS limitBuy
+		,p.limit_count AS limitCount
+		,p.start_time AS startTime
+		,p.end_time AS endTime
+	</sql>
+	
+	<select id="list" parameterType="map" resultType="Promotion">
+		select
+			<include refid="base_columns"/>
+		from
+			Promotion p
+			<if test="prodId != null and prodId != '' ">
+			JOIN Product_Promotion pp on (p.id = pp.promotion_id and pp.deleted=0)
+			</if>
+		<where>
+			p.deleted = 0
+			<if test="prodId != null and prodId != '' ">
+				AND pp.prod_id = #{prodId}
+			</if>
+		</where>
+	</select>
+	
+</mapper>

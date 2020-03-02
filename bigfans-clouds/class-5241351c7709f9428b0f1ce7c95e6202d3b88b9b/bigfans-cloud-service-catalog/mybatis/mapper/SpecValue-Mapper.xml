@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.SpecValueDAOImpl">
+
+	<sql id="base_columns">
+		sv.id AS id
+		,sv.value AS value
+		,sv.option_id AS optionId
+		,sv.category_id AS categoryId
+		,sv.image_path AS imagePath
+	</sql>
+
+	<select id="load" parameterType="map" resultType="SpecValue">
+		select
+		<include refid="base_columns"/>
+		from
+		SpecValue sv
+		<where>
+			deleted = 0
+			AND sv.id = #{id}
+		</where>
+	</select>
+	
+	<select id="list" parameterType="map" resultType="SpecValue">
+		select 
+			<include refid="base_columns"/>
+		from
+			SpecValue sv
+		<where>
+			deleted = 0
+			<if test="idList !=null"> 
+				AND sv.id in 
+				<foreach collection="idList" item="id" separator="," open="(" close=")">
+					#{id}
+				</foreach>
+			</if>
+			<if test="optionId != null and optionId != '' ">
+				AND sv.option_id = #{optionId}
+			</if>
+		</where>
+	</select>
+
+</mapper>

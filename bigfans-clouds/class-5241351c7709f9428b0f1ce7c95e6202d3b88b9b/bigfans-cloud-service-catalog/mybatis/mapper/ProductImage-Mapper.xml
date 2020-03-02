@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.ProductImageDAOImpl">
+
+	<sql id="base_columns">
+		pi.id AS id
+		,pi.create_date AS createDate
+		,pi.update_date AS updateDate
+		,pi.deleted AS deleted
+		,pi.prod_id AS prodId
+		,pi.pg_id AS pgId
+		,pi.type AS type
+		,pi.path AS path
+		,pi.order_num AS orderNum
+		,pi.storage_type AS storageType
+		,pi.server AS server
+	</sql>
+
+	<select id="load" parameterType="map" resultType="ProductImage">
+		SELECT
+		<include refid="base_columns"/>
+		FROM Product_Image pi
+		<where>
+		pi.deleted = 0
+		<if test="prodId != null">
+		AND pi.prod_id = #{prodId}
+		</if>
+		<if test="type != null">
+		AND pi.type = #{type}
+		</if>
+		<if test="orderNum != null">
+		AND pi.order_num = #{orderNum}
+		</if>
+		</where>
+	</select>
+
+	<select id="listWithGroup" parameterType="map" resultType="ImageGroup">
+		SELECT 
+			prod_id,
+			server,
+		  	MAX(
+		    	CASE
+		      	WHEN TYPE = 'S' 
+		      	THEN path 
+		    	END) AS smallImg,
+		    MAX(
+		    	CASE
+		      	WHEN TYPE = 'M' 
+		      	THEN path 
+		    	END) AS middleImg,
+		  	MAX(
+		    	CASE
+		      	WHEN TYPE = 'L' 
+		      	THEN path 
+		    	END) AS largeImg,
+		  	order_num AS orderNum 
+		FROM
+		  	Product_Image
+		WHERE prod_id = #{pid} 
+		GROUP BY order_num 
+	</select>
+
+</mapper>

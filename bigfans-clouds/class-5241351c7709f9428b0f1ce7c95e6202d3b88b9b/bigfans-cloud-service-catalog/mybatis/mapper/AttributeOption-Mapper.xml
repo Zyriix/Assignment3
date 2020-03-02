@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.AttributeOptionDAOImpl">
+
+	<sql id="base_columns">
+		ao.id AS id
+		,ao.name AS name
+		,ao.category_id AS categoryId
+		,ao.input_type AS inputType
+		,ao.code AS code
+		,ao.order_num AS orderNum
+	</sql>
+	
+	<select id="list" parameterType="map" resultType="AttributeOption">
+		select 
+			<include refid="base_columns"/>
+		from 
+			AttributeOption ao 
+		<where>
+			ao.deleted = 0
+			<if test="categoryId != null and categoryId != '' "> 
+			AND ao.category_id = #{categoryId} 
+			</if>
+			<if test="categoryIds != null">
+				AND ao.category_id in 
+				<foreach collection="categoryIds" item="categoryId" open="(" close=")" separator=",">
+					#{categoryId}
+				</foreach>
+			</if>
+		</where>
+		order by ao.order_num
+	</select>
+	
+	<select id="load" parameterType="map" resultType="AttributeOption">
+		select 
+			<include refid="base_columns"/>
+		from 
+			AttributeOption ao 
+		<where>
+			ao.deleted = 0
+			AND id=#{id}
+			<if test="categoryId != null and categoryId != '' "> 
+			AND ao.category_id = #{categoryId} 
+			</if>
+		</where>
+	</select>
+	
+</mapper>

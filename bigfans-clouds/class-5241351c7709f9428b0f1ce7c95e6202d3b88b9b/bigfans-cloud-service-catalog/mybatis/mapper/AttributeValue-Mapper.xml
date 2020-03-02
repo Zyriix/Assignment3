@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.AttributeValueDAOImpl">
+
+	<sql id="base_columns">
+		av.id as id
+		,av.value as value
+		,av.category_id as categoryId
+		,av.option_id as optionId
+	</sql>
+	
+	<select id="listByProduct" parameterType="map" resultType="AttributeValue">
+		select
+			pga.id AS id
+			,pga.option_id AS optionId
+			,pga.value_id AS valueId
+			,ao.name AS optionName
+			,av.value AS value
+		from
+			ProductGroup_Attribute pga
+			JOIN Product prod on (prod.pg_id = pga.pg_id)
+			JOIN AttributeValue av on (pga.value_id = av.id)
+			JOIN AttributeOption ao on (pga.option_id = ao.id)
+		<where>
+			pga.deleted = 0
+			and av.deleted = 0
+			and ao.deleted = 0
+			and prod.id = #{prodId}
+		</where>
+		order by pga.order_num
+	</select>
+	
+	<select id="list" parameterType="map" resultType="AttributeValue">
+		select 
+			<include refid="base_columns"/>
+			,ao.name AS optionName
+		from 
+			AttributeValue av
+		JOIN AttributeOption ao on (av.option_id = ao.id)
+		<where>
+			av.deleted = 0
+			<if test="id != null and id != '' ">
+			AND av.id = #{id}
+			</if>
+			<if test="optionId != null and optionId != '' ">
+			AND av.option_id = #{optionId}
+			</if>
+			<if test="idList != null">
+			AND av.id in 
+				<foreach collection="idList" item="id" separator="," open="(" close=")">
+					#{id}
+				</foreach>
+			</if>
+		</where>
+	</select>
+	
+</mapper>

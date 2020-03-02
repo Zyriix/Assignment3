@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.StockDAOImpl">
+
+	<sql id="basic_columns">
+		stock.id AS id
+		,stock.prod_id AS prodId
+		,stock.pg_id AS pgId
+		,stock.rest AS rest
+		,stock.locked AS locked
+	</sql>
+
+	<select id="load" parameterType="map" resultType="Stock">
+		select
+			<include refid="basic_columns"/>
+		from
+			Stock stock
+		<if test="skuValKey != null and skuValKey != '' ">
+			Join SKU sku on (stock.prod_id = sku.prod_id)
+		</if>
+		<where>
+			stock.deleted = 0
+			<if test="prodId !=null and prodId != '' ">
+				AND stock.prod_id = #{prodId}
+			</if>
+			<if test="skuValKey != null and skuValKey != '' ">
+				AND sku.val_key = #{skuValKey}
+			</if>
+		</where>
+	</select>
+
+	<update id="stockOut" parameterType="map">
+		update Stock
+		set rest = rest-#{amount}
+		<where>
+			prod_id=#{prodId}
+			and rest >= #{amount}
+			and deleted=0
+		</where>
+	</update>
+	
+	<update id="stockIn" parameterType="map">
+		update Stock
+		set rest = rest + #{amount}
+		<where>
+			prod_id=#{prodId}
+			and deleted=0
+		</where>
+	</update>
+	
+	<update id="lockStock" parameterType="map">
+		update Stock
+		set rest = rest-#{amount},locked = locked + #{amount}
+		<where>
+			prod_id=#{prodId}
+			and rest >= #{amount}
+			and deleted=0
+		</where>
+	</update>
+	
+	<update id="releaseStock" parameterType="map">
+		update Stock
+		set rest = rest+#{amount},locked = locked - #{amount}
+		<where>
+			prod_id=#{prodId}
+			and locked >= #{amount}
+			and deleted=0
+		</where>
+	</update>
+
+</mapper>

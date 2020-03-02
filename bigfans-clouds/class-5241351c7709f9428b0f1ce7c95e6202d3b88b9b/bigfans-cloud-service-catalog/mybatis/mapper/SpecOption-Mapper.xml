@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.SpecOptionDAOImpl">
+
+	<sql id="base_columns">
+		so.id AS id
+		,so.name AS name
+		,so.category_id AS categoryId
+		,so.input_type AS inputType
+		,so.code AS code
+		,so.order_num AS orderNum
+	</sql>
+	
+	<select id="load" parameterType="SpecOption" resultType="SpecOption">
+		select 
+			<include refid="base_columns"/>
+		from SpecOption so
+		<where>
+			deleted = 0
+			<if test="id != null and id != '' ">
+				AND id = #{id}
+			</if>
+		</where>
+	</select>
+	
+	<select id="list" parameterType="map" resultType="SpecOption">
+		select 
+			<include refid="base_columns"/>
+		from SpecOption so
+		<where>
+			so.deleted = 0
+			<if test="categoryId != null and categoryId != '' ">
+				AND so.category_id = #{catId}
+			</if>
+			<if test="categoryIds != null and categoryIds.size != 0">
+				AND so.category_id in 
+				<foreach collection="categoryIds" item="categoryId" open="(" close=")" separator=",">
+					#{categoryId}
+				</foreach>
+			</if>
+		</where>
+	</select>
+</mapper>

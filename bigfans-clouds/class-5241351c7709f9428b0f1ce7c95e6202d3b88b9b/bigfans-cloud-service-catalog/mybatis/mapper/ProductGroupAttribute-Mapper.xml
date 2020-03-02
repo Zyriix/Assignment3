@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.ProductGroupAttributeDAOImpl">
+
+	<sql id="base_columns">
+		pga.id AS id
+		,pga.deleted AS deleted
+		,pga.create_date AS createDate
+		,pga.update_date AS updateDate
+		,pga.pg_id AS pgId
+		,pga.option_id AS optionId
+		,pga.value_id AS valueId
+		,pga.input_type AS inputType
+	</sql>
+	
+	<select id="list" parameterType="map" resultType="ProductGroupAttribute">
+		select
+		<include refid="base_columns"/>
+		,ao.name AS optionName
+		,av.value AS value
+		from ProductGroup_Attribute pga
+		join AttributeOption ao on (pga.option_id = ao.id)
+		join AttributeValue av on (pga.value_id = av.id)
+		<where>
+			pga.deleted = 0
+			AND ao.deleted = 0
+			AND av.deleted = 0
+			<if test="pgId != null and pgId != '' ">
+			AND pg_id = #{pgId}
+			</if>
+		</where>
+	</select>
+</mapper>

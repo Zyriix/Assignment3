@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.BrandDAOImpl">
+
+	<sql id="base_columns">
+		b.id AS id,
+		b.create_date AS createDate,
+		b.update_date AS updateDate,
+		b.name AS name,
+		b.logo AS logo
+	</sql>
+	
+	<select id="search" parameterType="hashmap" resultType="Brand">
+		<bind name="namepattern" value="'%' + _parameter.keyword + '%'"/>
+		select
+			<include refid="base_columns"/>
+		from
+			Brand b
+		<where>
+			b.deleted = 0
+			<if test="categoryId != null and categoryId != '' ">
+				AND category_id = #{categoryId}
+			</if>
+			<if test="keyword != null and keyword != '' ">
+				AND name like #{namepattern}
+			</if>
+		</where>
+		order by b.name desc
+	</select>
+	
+	<select id="load" parameterType="String" resultType="Brand">
+		select
+			<include refid="base_columns"/>
+		from
+			Brand b
+		<where>
+			b.id = #{id}
+			AND b.deleted = 0
+		</where>
+	</select>
+	
+</mapper>

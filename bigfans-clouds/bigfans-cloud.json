@@ -465,6 +465,294 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "path": "bigfans-cloud-service-system",
+                            "language": "Java",
+                            "packages": [
+                                {
+                                    "name": "com.bigfans.system.service.impl",
+                                    "dependency": [
+                                        "com.bigfans.system.service"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "path": "bigfans-cloud-service-catalog",
+                            "language": "Java",
+                            "packages": [
+                                {
+                                    "name": "com.bigfans.catalogservice.api",
+                                    "dependency": [
+                                        "com.bigfans.catalogservice.service.brand",
+                                        "com.bigfans.catalogservice.service.productgroup",
+                                        "com.bigfans.framework.web",
+                                        "com.bigfans.catalogservice.service.tag",
+                                        "com.bigfans.framework.plugins",
+                                        "com.bigfans.catalogservice.model.entity",
+                                        "com.bigfans.catalogservice.api.request",
+                                        "com.bigfans.framework.annotations",
+                                        "com.bigfans.catalogservice.service.attribute",
+                                        "com.bigfans.catalogservice.service.sku",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.service.spec",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.framework",
+                                        "com.bigfans.catalogservice.service.category",
+                                        "com.bigfans.catalogservice.service.home",
+                                        "com.bigfans.catalogservice.service.product"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.api.clients",
+                                    "dependency": [
+                                        "com.bigfans.framework.exception",
+                                        "com.bigfans.framework.model"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.api.interceptor",
+                                    "dependency": [
+                                        "com.bigfans.framework.web",
+                                        "com.bigfans",
+                                        "com.bigfans.framework",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework.annotations"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.api.request",
+                                    "dependency": [
+                                        "com.bigfans.catalogservice.model"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice",
+                                    "dependency": [
+                                        "com.bigfans.framework.web",
+                                        "com.bigfans.framework",
+                                        "com.bigfans.catalogservice.exception",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.framework.exception"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.config",
+                                    "dependency": [
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.framework.plugins",
+                                        "com.bigfans.framework.redis",
+                                        "com.bigfans.framework.cache",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.catalogservice.api.interceptor",
+                                        "com.bigfans.framework.aspect"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.dao",
+                                    "dependency": [
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.framework.model"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.dao.impl",
+                                    "dependency": [
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.catalogservice.model.entity",
+                                        "com.bigfans.framework.cache",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.catalogservice.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.events",
+                                    "dependency": [
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.model.event",
+                                        "com.bigfans.framework.event"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.exception",
+                                    "dependency": [
+                                        "com.bigfans.framework.exception"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.listener",
+                                    "dependency": [
+                                        "com.bigfans.catalogservice.service.sku",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.model.event.order",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.model.event",
+                                        "com.bigfans.model.event.attribute"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.model",
+                                    "dependency": [
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.catalogservice.model.entity"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.model.entity",
+                                    "dependency": [
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework.annotations"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.service.attribute",
+                                    "dependency": [
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.catalogservice.model.entity",
+                                        "com.bigfans.catalogservice.service.category",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.model.event.attribute",
+                                        "com.bigfans.catalogservice.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.service.brand",
+                                    "dependency": [
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.framework",
+                                        "com.bigfans.framework.plugins",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.model.event",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.catalogservice.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.service.category",
+                                    "dependency": [
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.catalogservice.model.entity",
+                                        "com.bigfans.framework.cache",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.model.event",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.catalogservice.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.service.home",
+                                    "dependency": [
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.catalogservice.service.category",
+                                        "com.bigfans.catalogservice.model.entity",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.catalogservice.service.product",
+                                        "com.bigfans.catalogservice.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.service.product",
+                                    "dependency": [
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.service.spec",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.framework",
+                                        "com.bigfans.catalogservice.service.sku",
+                                        "com.bigfans.framework.plugins",
+                                        "com.bigfans.catalogservice.model.entity",
+                                        "com.bigfans.catalogservice.api.clients",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.model.event",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.catalogservice.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.service.productgroup",
+                                    "dependency": [
+                                        "com.bigfans.catalogservice.service.brand",
+                                        "com.bigfans.catalogservice.service.tag",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.catalogservice.service.attribute",
+                                        "com.bigfans.catalogservice.service.category",
+                                        "com.bigfans.catalogservice.model.entity",
+                                        "com.bigfans.framework.cache",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.catalogservice.service.product",
+                                        "com.bigfans.catalogservice.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.service.sku",
+                                    "dependency": [
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.catalogservice.exception",
+                                        "com.bigfans.catalogservice.model.entity",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.catalogservice.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.service.spec",
+                                    "dependency": [
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.catalogservice.service.category",
+                                        "com.bigfans.catalogservice.model.entity",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.catalogservice.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.service.tag",
+                                    "dependency": [
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.model.event.tag",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.catalogservice.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.catalogservice.test.kafka",
+                                    "dependency": [
+                                        "com.bigfans.catalogservice.service.tag",
+                                        "com.bigfans.catalogservice.model",
+                                        "com.bigfans.catalogservice.service.category",
+                                        "com.bigfans.catalogservice.model.entity",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.model.event",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.catalogservice",
+                                        "com.bigfans.model.event.tag",
+                                        "com.bigfans.catalogservice.service.product"
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     "microservices": [ // 包含哪些微服务
@@ -714,6 +1002,1843 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "name": "bigfans-cloud-service-system", // 微服务的名字，用于唯一标识这个系统中的微服务
+                            "path": "bigfans-cloud-service-system", // 微服务所在的目录位置（相对于代码仓）
+                            "otherPaths": [],
+                            "interfaces": [],
+                            "call": [],
+                            // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件
+                            "publish": [],
+                            "subscribe": []
+                        },
+                        {
+                            "name": "bigfans-cloud-service-catalog", // 微服务的名字，用于唯一标识这个系统中的微服务
+                            "path": "bigfans-cloud-service-catalog", // 微服务所在的目录位置（相对于代码仓）
+                            "otherPaths": [ // 一个微服务也可能会被拆分成多个模块实现，可能会对应到多个目录
+                            ],
+                            "interfaces": [
+                                {
+                                    "name": "GET:/attribute", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/AttributeApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "optionId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                },
+                                {
+                                    "name": "GET:/attributes", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/AttributeApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "ids": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "prodId": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "pgId": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "values": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "type": "Basic",
+                                                        "name": "String"
+                                                    }
+                                                },
+                                                "valueList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "optionName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/attributeOption", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/AttributeManageApi.java"
+                                    ],
+                                    "inputParamStruct": { // 入参的结构
+                                        "option": { // 嵌套结构体
+                                            "type": "Basic", // Basic, Array
+                                            "struct": {
+                                                "prodId": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "pgId": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "values": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "type": "Basic",
+                                                        "name": "String"
+                                                    }
+                                                },
+                                                "valueList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "optionName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                },
+                                {
+                                    "name": "GET:/brands", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/BrandManageApi.java"
+                                    ],
+                                    "inputParamStruct": {},
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                },
+                                {
+                                    "name": "POST:/brand", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/BrandManageApi.java"
+                                    ],
+                                    "inputParamStruct": { // 入参的结构
+                                        "brand": { // 嵌套结构体
+                                            "type": "Basic", // Basic, Array
+                                            "struct": {
+                                                "categories": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "type": "Basic",
+                                                        "name": "String"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                },
+                                {
+                                    "name": "POST:/brand/uploadLogo", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/BrandManageApi.java"
+                                    ],
+                                    "inputParamStruct": { // 入参的结构
+                                        "logoFile": { // 嵌套结构体
+                                            "type": "Array", // Basic, Array
+                                            "name": "byte"
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "key": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "value": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/brand/deleteLogo", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/BrandManageApi.java"
+                                    ],
+                                    "inputParamStruct": { // 入参的结构
+                                        "params": { // 嵌套结构体
+                                            "type": "Array", // Basic, Array
+                                            "struct": {
+                                                "key": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "value": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                },
+                                {
+                                    "name": "GET:/categories", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/CategoryApi.java"
+                                    ],
+                                    "inputParamStruct": {},
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "subCats": {
+                                                    "type": "Array"
+                                                },
+                                                "parent": {
+                                                    "type": "Array"
+                                                },
+                                                "attrList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "prodId": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "pgId": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "values": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "type": "Basic",
+                                                                "name": "String"
+                                                            }
+                                                        },
+                                                        "valueList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "optionName": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/categories/{catId}", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/CategoryApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "catId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Basic",
+                                            "struct": {
+                                                "subCats": {
+                                                    "type": "Array"
+                                                },
+                                                "parent": {
+                                                    "type": "Array"
+                                                },
+                                                "attrList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "prodId": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "pgId": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "values": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "type": "Basic",
+                                                                "name": "String"
+                                                            }
+                                                        },
+                                                        "valueList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "optionName": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/navigator", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/CategoryApi.java"
+                                    ],
+                                    "inputParamStruct": {},
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "subCats": {
+                                                    "type": "Array"
+                                                },
+                                                "parent": {
+                                                    "type": "Array"
+                                                },
+                                                "attrList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "prodId": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "pgId": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "values": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "type": "Basic",
+                                                                "name": "String"
+                                                            }
+                                                        },
+                                                        "valueList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "optionName": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/crumbs", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/CategoryApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "catId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "prodId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "subCats": {
+                                                    "type": "Array"
+                                                },
+                                                "parent": {
+                                                    "type": "Array"
+                                                },
+                                                "attrList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "prodId": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "pgId": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "values": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "type": "Basic",
+                                                                "name": "String"
+                                                            }
+                                                        },
+                                                        "valueList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "optionName": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/crumbs", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/CategoryApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "catId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "prodId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "key": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "value": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/subcats", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/CategoryApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "parentId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "key": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "value": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "subCats": {
+                                                            "type": "Array"
+                                                        },
+                                                        "parent": {
+                                                            "type": "Array"
+                                                        },
+                                                        "attrList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "prodId": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                },
+                                                                "pgId": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                },
+                                                                "values": {
+                                                                    "type": "Array",
+                                                                    "struct": {
+                                                                        "type": "Basic",
+                                                                        "name": "String"
+                                                                    }
+                                                                },
+                                                                "valueList": {
+                                                                    "type": "Array",
+                                                                    "struct": {
+                                                                        "optionName": {
+                                                                            "type": "Basic",
+                                                                            "name": "String"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/com/bigfans/categoryservice/{id}/attributeOption", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/CategoryAttributeApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "id": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "prodId": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "pgId": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "values": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "type": "Basic",
+                                                        "name": "String"
+                                                    }
+                                                },
+                                                "valueList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "optionName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/category", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/CategoryManageApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "category": {
+                                            "type": "Basic",
+                                            "struct": {
+                                                "subCats": {
+                                                    "type": "Array"
+                                                },
+                                                "parent": {
+                                                    "type": "Array"
+                                                },
+                                                "attrList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "prodId": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "pgId": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "values": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "type": "Basic",
+                                                                "name": "String"
+                                                            }
+                                                        },
+                                                        "valueList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "optionName": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                },
+                                {
+                                    "name": "GET:/floor", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/FloorApi.java"
+                                    ],
+                                    "inputParamStruct": {},
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "categotyPageSize": {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "productPageSize": {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "catgeoryList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "subCats": {
+                                                            "type": "Array"
+                                                        },
+                                                        "parent": {
+                                                            "type": "Array"
+                                                        },
+                                                        "attrList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "prodId": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                },
+                                                                "pgId": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                },
+                                                                "values": {
+                                                                    "type": "Array",
+                                                                    "struct": {
+                                                                        "type": "Basic",
+                                                                        "name": "String"
+                                                                    }
+                                                                },
+                                                                "valueList": {
+                                                                    "type": "Array",
+                                                                    "struct": {
+                                                                        "optionName": {
+                                                                            "type": "Basic",
+                                                                            "name": "String"
+                                                                        }
+                                                                    }
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "productList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "categoryName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "brandName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "stock": {
+                                                            "type": "Basic",
+                                                            "name": "Integer"
+                                                        },
+                                                        "discountedPrice": {
+                                                            "type": "Basic",
+                                                            "name": "Integer"
+                                                        },
+                                                        "attrValueList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "optionName": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                }
+                                                            }
+                                                        },
+                                                        "tagList": {
+                                                            "type": "Array",
+                                                            "struct": {}
+                                                        },
+                                                        "imgList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "ext": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                },
+                                                                "originName": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                }
+                                                            }
+                                                        },
+                                                        "specList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "option": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                },
+                                                                "selected": {
+                                                                    "type": "Basic",
+                                                                    "name": "Boolean"
+                                                                },
+                                                                "selectable": {
+                                                                    "type": "Basic",
+                                                                    "name": "Boolean"
+                                                                },
+                                                                "outOfStock": {
+                                                                    "type": "Basic",
+                                                                    "name": "Boolean"
+                                                                },
+                                                                "value": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/product/{id}", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/ProductApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "pid": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Basic",
+                                            "struct": {
+                                                "categoryName": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "brandName": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "stock": {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "discountedPrice": {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "attrValueList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "optionName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        }
+                                                    }
+                                                },
+                                                "tagList": {
+                                                    "type": "Array",
+                                                    "struct": {}
+                                                },
+                                                "imgList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "ext": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "originName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        }
+                                                    }
+                                                },
+                                                "specList": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "option": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "selected": {
+                                                            "type": "Basic",
+                                                            "name": "Boolean"
+                                                        },
+                                                        "selectable": {
+                                                            "type": "Basic",
+                                                            "name": "Boolean"
+                                                        },
+                                                        "outOfStock": {
+                                                            "type": "Basic",
+                                                            "name": "Boolean"
+                                                        },
+                                                        "value": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/productImages", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/ProductApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "pid": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "smallImg": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "middleImg": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "largeImg": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "orderNum": {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "server": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/productGroup/detail", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/ProductGroupApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "pgId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "prodId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/images", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/ProductImageApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "pid": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "smallImg": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "middleImg": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "largeImg": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "orderNum": {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "server": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/productImg/upload", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/ProductImageApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "image": {
+                                            "type": "Basic",
+                                            "name": "byte"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "key": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "value": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/productImg/remove", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/ProductImageApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "params": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "key": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "value": {
+                                                    "type": "Array",
+                                                    "name": "byte"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                },
+                                {
+                                    "name": "POST:/itemservice", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/ProductManageApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "request": {
+                                            "type": "Basic",
+                                            "struct": {
+                                                "productGroup": {
+                                                    "type": "Basic",
+                                                    "struct": {
+                                                        "categoryName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "brandName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "specList": {
+                                                            "type": "Basic",
+                                                            "struct": {
+                                                                "pid": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                },
+                                                                "pgId": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                },
+                                                                "values": {
+                                                                    "type": "Array",
+                                                                    "name": "String"
+                                                                },
+                                                                "specValues": {
+                                                                    "type": "Array",
+                                                                    "struct": {}
+                                                                }
+                                                            }
+                                                        },
+                                                        "categoryId": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "categoryIdList": {
+                                                            "type": "Array",
+                                                            "name": "String"
+                                                        }
+                                                    }
+                                                },
+                                                "products": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "categoryName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "brandName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "stock": {
+                                                            "type": "Basic",
+                                                            "name": "Integer"
+                                                        },
+                                                        "discountedPrice": {
+                                                            "type": "Basic",
+                                                            "name": "Integer"
+                                                        },
+                                                        "attrValueList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "optionName": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                }
+                                                            }
+                                                        },
+                                                        "tagList": {
+                                                            "type": "Array",
+                                                            "struct": {}
+                                                        },
+                                                        "imgList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "ext": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                },
+                                                                "originName": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                }
+                                                            }
+                                                        },
+                                                        "specList": {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "option": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                },
+                                                                "selected": {
+                                                                    "type": "Basic",
+                                                                    "name": "Boolean"
+                                                                },
+                                                                "selectable": {
+                                                                    "type": "Basic",
+                                                                    "name": "Boolean"
+                                                                },
+                                                                "outOfStock": {
+                                                                    "type": "Basic",
+                                                                    "name": "Boolean"
+                                                                },
+                                                                "value": {
+                                                                    "type": "Basic",
+                                                                    "name": "String"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "attributes": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "value": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "optionName": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        }
+                                                    }
+                                                },
+                                                "tags": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "value": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                },
+                                {
+                                    "name": "POST:/itemservice/uploadImg", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/ProductManageApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "image": {
+                                            "type": "Array",
+                                            "name": "byte"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "key": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "value": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/itemservice/removeImg", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/ProductManageApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "params": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "key": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "value": {
+                                                    "type": "Array",
+                                                    "name": "byte"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                },
+                                {
+                                    "name": "GET:/sku/{prodId}", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/SkuApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "skuMap": {
+                                                "type": "Array",
+                                                "struct": {
+                                                    "key": {
+                                                        "type": "Basic",
+                                                        "name": "String"
+                                                    },
+                                                    "value": {
+                                                        "type": "Array",
+                                                        "name": "String"
+                                                    }
+                                                }
+                                            },
+                                            "selectedSku": {
+                                                "type": "Basic",
+                                                "struct": {
+                                                    "KEYS_SEPARATOR": {
+                                                        "type": "Basic",
+                                                        "name": "String"
+                                                    },
+                                                    "SKU_SEPARATOR": {
+                                                        "type": "Basic",
+                                                        "name": "String"
+                                                    },
+                                                    "skuMap": {
+                                                        "type": "Array",
+                                                        "struct": {
+                                                            "key": {
+                                                                "type": "Basic",
+                                                                "name": "String"
+                                                            },
+                                                            "value": {
+                                                                "type": "Array",
+                                                                "name": "String"
+                                                            }
+                                                        }
+                                                    },
+                                                    "optIdList": {
+                                                        "type": "Array",
+                                                        "name": "String"
+                                                    },
+                                                    "valIdList": {
+                                                        "type": "Array",
+                                                        "name": "String"
+                                                    }
+                                                }
+                                            },
+                                            "disabledValIdList": {
+                                                "type": "Array",
+                                                "name": "String"
+                                            },
+                                            "specGroups": {
+                                                "option": {
+                                                    "type": "Basic",
+                                                    "struct": {
+                                                        "pid": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "pgid": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "values": {
+                                                            "type": "Array",
+                                                            "name": "String"
+                                                        },
+                                                        "specValues": {
+                                                            "type": "Array",
+                                                            "struct": {}
+                                                        }
+                                                    }
+                                                },
+                                                "values": {
+                                                    "type": "Array",
+                                                    "struct": {
+                                                        "option": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        },
+                                                        "selected": {
+                                                            "type": "Basic",
+                                                            "name": "Boolean"
+                                                        },
+                                                        "selectable": {
+                                                            "type": "Basic",
+                                                            "name": "Boolean"
+                                                        },
+                                                        "outOfStock": {
+                                                            "type": "Basic",
+                                                            "name": "Boolean"
+                                                        },
+                                                        "value": {
+                                                            "type": "Basic",
+                                                            "name": "String"
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/orderStockOut", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/SkuApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "orderId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "prodQuantityMap": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "key": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "value": {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                },
+                                {
+                                    "name": "GET:/specs", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/SpecApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "catId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "prodId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "pid": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "pgId": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "values": {
+                                                    "type": "Array",
+                                                    "name": "String"
+                                                },
+                                                "specValues": {
+                                                    "type": "Array",
+                                                    "struct": {}
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/spec", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/SpecApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "specOption": {
+                                            "type": "Basic",
+                                            "struct": {
+                                                "pid": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "pgId": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "values": {
+                                                    "type": "Array",
+                                                    "name": "String"
+                                                },
+                                                "specValues": {
+                                                    "type": "Array",
+                                                    "struct": {}
+                                                }
+                                            }
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                },
+                                {
+                                    "name": "GET:stock", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/StockApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/tags", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/TagApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {
+                                            "type": "Array",
+                                            "struct": {}
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/tags/{tagId}",
+                                    "filePaths": [
+                                        "bigfans-cloud-service-catalog/src/main/java/com/bigfans/catalogservice/api/TagApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "tagId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "message": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "redirectUrl": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "data": {}
+                                    }
+                                }
+                            ],
+                            "call": [],
+                            // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件
+                            "publish": [],
+                            "subscribe": []
                         }
                     ],
                     "topics": [ // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件

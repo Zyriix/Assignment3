@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.catalogservice.dao.impl.CategoryDAOImpl">
+	
+	<sql id="base_columns">
+		cat.id AS id
+		,cat.create_date AS createDate
+		,cat.update_date AS updateDate
+		,cat.name AS name
+		,cat.parent_id AS parentId
+		,cat.level AS level
+		,cat.image_path AS imagePath
+		,cat.order_num AS orderNum
+		,cat.show_innav AS showInNav
+		,cat.show_inhome AS showInHome
+		,cat.description AS description
+	</sql>
+	
+	<!-- 查询商品类别 -->
+	<select id="list" parameterType="map" resultType="Category">
+		SELECT
+			<include refid="base_columns"/>
+		FROM
+			Category cat
+		<where>
+			cat.deleted = 0
+			<if test="level != null and level != '' "> 
+				AND cat.level = #{level} 
+			</if>
+			<if test="parentId != null and parentId != '' "> 
+				AND cat.parent_id = #{parentId} 
+			</if>
+			<if test="showInNav == true ">
+				AND cat.show_innav = 1
+			</if>
+			<if test="showInHome == true ">
+				AND cat.show_inhome = 1
+			</if>
+		</where>
+		order by cat.order_num
+	</select>
+	
+	<select id="load" parameterType="String" resultType="Category">
+		select
+			<include refid="base_columns"/>
+		from
+			Category cat
+		<where>
+			cat.deleted = 0
+			AND cat.id=#{id}
+		</where>
+		order by cat.order_num
+	</select>
+
+	<select id="getParentId" parameterType="map" resultType="string">
+		select parent_id from Category where id = #{catId} and deleted = 0
+	</select>
+</mapper>

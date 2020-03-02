@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.cartservice.dao.impl.ProductSpecDAOImpl">
+
+	<sql id="base_columns">
+		ps.id AS id
+		,ps.deleted AS deleted
+		,ps.create_date AS createDate
+		,ps.update_date AS updateDate
+		,ps.prod_id AS productId
+		,ps.option_id AS optionId
+		,ps.option AS `option`
+		,ps.value AS `value`
+		,ps.value_id AS valueId
+	</sql>
+	
+	<select id="list" parameterType="map" resultType="ProductSpec">
+		select 
+			<include refid="base_columns"/>
+		from
+			Product_Spec ps
+		<where>
+			ps.deleted = 0
+			<if test="prodId != null and prodId != '' ">
+			AND ps.prod_id = #{prodId}
+			</if>
+			<if test="idList !=null"> 
+				AND ps.id in 
+				<foreach collection="idList" item="id" separator="," open="(" close=")">
+					#{id}
+				</foreach>
+			</if>
+			<if test="optionId != null and optionId != '' ">
+				AND ps.option_id = #{optionId}
+			</if>
+		</where>
+	</select>
+
+</mapper>

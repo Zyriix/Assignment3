@@ -753,6 +753,422 @@
                                     ]
                                 }
                             ]
+                        },
+                        {
+                            "path": "bigfans-cloud-service-cart", // 模块目录相对于代码仓根目录的路径
+                            "language": "Java", // Java
+                            "packages": [
+                                {
+                                    "name": "com.bigfans.cartservice.api",
+                                    "dependency": [
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.cartservice.model",
+                                        "com.bigfans.framework.web",
+                                        "com.bigfans.framework",
+                                        "com.bigfans.framework.exception",
+                                        "com.bigfans.cartservice.model.entity",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.framework.annotations",
+                                        "com.bigfans.cartservice.service.impl",
+                                        "com.bigfans.cartservice.service"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice.api.clients",
+                                    "dependency": [
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.model.dto.cart",
+                                        "com.bigfans.cartservice.model",
+                                        "com.bigfans.framework.web"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice.api.interceptor",
+                                    "dependency": [
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.framework.web",
+                                        "com.bigfans.framework",
+                                        "com.bigfans",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework.annotations"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice.config",
+                                    "dependency": [
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.cartservice.api.interceptor",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.framework.redis",
+                                        "com.bigfans.cartservice.service.impl"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice.dao",
+                                    "dependency": [
+                                        "com.bigfans.cartservice.model",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice.dao.impl",
+                                    "dependency": [
+                                        "com.bigfans.cartservice.dao",
+                                        "com.bigfans.cartservice.model",
+                                        "com.bigfans.cartservice.model.entity",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice.exception",
+                                    "dependency": [
+                                        "com.bigfans.framework.exception"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice.listener",
+                                    "dependency": [
+                                        "com.bigfans.cartservice.model",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.model.event",
+                                        "com.bigfans.framework",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.cartservice.api.clients",
+                                        "com.bigfans.cartservice.service.impl",
+                                        "com.bigfans.cartservice.service",
+                                        "com.bigfans.model.event.user"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice.model",
+                                    "dependency": [
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.cartservice.model.entity"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice.model.entity",
+                                    "dependency": [
+                                        "com.bigfans.framework.model"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice.service",
+                                    "dependency": [
+                                        "com.bigfans.cartservice.model",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice.service.impl",
+                                    "dependency": [
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.cartservice.model",
+                                        "com.bigfans.cartservice.exception",
+                                        "com.bigfans.cartservice.dao",
+                                        "com.bigfans.model.dto.cart",
+                                        "com.bigfans.framework.exception",
+                                        "com.bigfans.cartservice.model.entity",
+                                        "com.bigfans.cartservice.api.clients",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.framework.redis",
+                                        "com.bigfans.cartservice.service"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.cartservice",
+                                    "dependency": [
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.framework"
+                                    ]
+                                }
+                            ]
+
+                        },
+                        {
+                            "path": "bigfans-cloud-service-user", // 模块目录相对于代码仓根目录的路径
+                            "language": "Java", // Java
+                            "packages": [
+                                {
+                                    "name": "com.bigfans.userservice.api",
+                                    "dependency": [
+                                        "com.bigfans.userservice.model",
+                                        "com.bigfans.userservice.api.form",
+                                        "com.bigfans.userservice.exception",
+                                        "com.bigfans.model.event.notification",
+                                        "com.bigfans.userservice.service.impl",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework.web",
+                                        "com.bigfans.framework.annotations",
+                                        "com.bigfans.framework",
+                                        "com.bigfans.userservice.service",
+                                        "com.bigfans.userservice.model.entity",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice.api.clients",
+                                    "dependency": [
+                                        "com.bigfans.userservice.model",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans",
+                                        "com.bigfans.framework.web"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice.api.interceptor",
+                                    "dependency": [
+                                        "com.bigfans.framework.exception",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework.annotations",
+                                        "com.bigfans.framework.web",
+                                        "com.bigfans.framework",
+                                        "com.bigfans"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice.config",
+                                    "dependency": [
+                                        "com.bigfans.framework.cache",
+                                        "com.bigfans.userservice.service.impl",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.framework.redis",
+                                        "com.bigfans.userservice.api.interceptor",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice.dao",
+                                    "dependency": [
+                                        "com.bigfans.userservice.model",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice.dao.impl",
+                                    "dependency": [
+                                        "com.bigfans.userservice.model",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.userservice.dao",
+                                        "com.bigfans.userservice.model.entity"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice.exception",
+                                    "dependency": [
+                                        "com.bigfans.framework.exception"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice.listener",
+                                    "dependency": [
+                                        "com.bigfans.userservice.model",
+                                        "com.bigfans.userservice.api.clients",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.model.event.coupon",
+                                        "com.bigfans.userservice.service",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.model.event.order"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice.model",
+                                    "dependency": [
+                                        "com.bigfans.userservice.model.entity"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice.model.entity",
+                                    "dependency": [
+                                        "com.bigfans.framework.model"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice.service",
+                                    "dependency": [
+                                        "com.bigfans.userservice.model",
+                                        "com.bigfans.framework.dao",
+                                        "com.bigfans.framework.model"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice.service.impl",
+                                    "dependency": [
+                                        "com.bigfans.userservice.model",
+                                        "com.bigfans.userservice.dao",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework.redis",
+                                        "com.bigfans.framework",
+                                        "com.bigfans.model.event.coupon",
+                                        "com.bigfans.userservice.service",
+                                        "com.bigfans.userservice.model.entity",
+                                        "com.bigfans.model.event.user",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.userservice",
+                                    "dependency": [
+                                        "com.bigfans.framework",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.framework.exception"
+                                    ]
+                                }
+                            ]
+                        },
+                        {
+                            "path": "bigfans-cloud-service-search", // 模块目录相对于代码仓根目录的路径
+                            "language": "Java", // Java
+                            "packages": [
+                                {
+                                    "name": "com.bigfans.searchservice.api",
+                                    "dependency": [
+                                        "com.bigfans.searchservice.api.request",
+                                        "com.bigfans.searchservice.api.clients",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.framework.es.request",
+                                        "com.bigfans.searchservice.model.vo",
+                                        "com.bigfans.searchservice.model",
+                                        "com.bigfans.framework.web",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.searchservice.service"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.api.clients",
+                                    "dependency": [
+                                        "com.bigfans.searchservice.model",
+                                        "com.bigfans.framework.web",
+                                        "com.bigfans.framework.utils"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.api.interceptor",
+                                    "dependency": [
+                                        "com.bigfans",
+                                        "com.bigfans.framework.annotations",
+                                        "com.bigfans.framework.web",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework",
+                                        "com.bigfans.framework.utils"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.config",
+                                    "dependency": [
+                                        "com.bigfans.framework.redis",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.framework.event",
+                                        "com.bigfans.framework.es",
+                                        "com.bigfans.searchservice.api.interceptor",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.dao",
+                                    "dependency": [
+                                        "com.bigfans.searchservice.model",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.dao.impl",
+                                    "dependency": [
+                                        "com.bigfans.searchservice.model",
+                                        "com.bigfans.searchservice.dao",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.document.convertor",
+                                    "dependency": [
+                                        "com.bigfans.searchservice.schema.mapping",
+                                        "com.bigfans.framework.es",
+                                        "com.bigfans.searchservice.model",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework.utils"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.listener",
+                                    "dependency": [
+                                        "com.bigfans.model.event.tag",
+                                        "com.bigfans",
+                                        "com.bigfans.model.event.order",
+                                        "com.bigfans.framework.kafka",
+                                        "com.bigfans.searchservice.api.clients",
+                                        "com.bigfans.searchservice.schema.mapping",
+                                        "com.bigfans.framework.es.request",
+                                        "com.bigfans.framework.es",
+                                        "com.bigfans.model.event",
+                                        "com.bigfans.searchservice.model",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework.utils"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.model",
+                                    "dependency": [
+                                        "com.bigfans.framework.model"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.model.vo",
+                                    "dependency": [
+                                        "com.bigfans.searchservice.api.request",
+                                        "com.bigfans.framework.utils"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.schema.mapping",
+                                    "dependency": [
+                                        "com.bigfans.framework.es",
+                                        "com.bigfans.framework.es.schema"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.service",
+                                    "dependency": [
+                                        "com.bigfans.searchservice.model",
+                                        "com.bigfans.framework.es.request",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice.service.impl",
+                                    "dependency": [
+                                        "com.bigfans.searchservice.dao",
+                                        "com.bigfans.framework.redis",
+                                        "com.bigfans.framework.utils",
+                                        "com.bigfans.searchservice.schema.mapping",
+                                        "com.bigfans.framework.es",
+                                        "com.bigfans.framework.es.request",
+                                        "com.bigfans.framework.es.schema",
+                                        "com.bigfans.searchservice.model",
+                                        "com.bigfans.searchservice.document.convertor",
+                                        "com.bigfans.framework.model",
+                                        "com.bigfans.searchservice.service",
+                                        "com.bigfans.framework.dao"
+                                    ]
+                                },
+                                {
+                                    "name": "com.bigfans.searchservice",
+                                    "dependency": [
+                                        "com.bigfans.framework",
+                                        "com.bigfans.framework.kafka"
+                                    ]
+                                }
+                            ]
                         }
                     ],
                     "microservices": [ // 包含哪些微服务
@@ -2839,6 +3255,2776 @@
                             // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件
                             "publish": [],
                             "subscribe": []
+                        },
+                        {
+                            "name": "bigfans-cloud-service-cart", // 微服务的名字，用于唯一标识这个系统中的微服务
+                            "path": "bigfans-cloud-service-cart", // 微服务所在的目录位置（相对于代码仓）
+                            "otherPaths": [ // 一个微服务也可能会被拆分成多个模块实现，可能会对应到多个目录
+                            ],
+                            "interface": [
+                                {
+                                "name": "POST:/addItem", //接口名，用于标识这个微服务中的不同接口
+                                "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                    "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                ],
+                                "inputParamStruct": {
+                                    "prodName":
+                                    {
+                                        "type": "Basic",
+                                        "name":"String"
+                                    },
+                                    "weight":
+                                    {
+                                        "type": "Basic",
+                                        "name":"BigDecimal"
+                                    },
+                                    "originalPrice":
+                                    {
+                                        "type": "Basic",
+                                        "name":"BigDecimal"
+                                    },
+                                    "price":
+                                    {
+                                        "type": "Basic",
+                                        "name":"BigDecimal"
+                                    },
+                                    "prodImg":
+                                    {
+                                        "type": "Basic",
+                                        "name":"String"
+                                    },
+                                    "productOnSale":
+                                    {
+                                        "type": "Basic",
+                                        "name":"boolean"
+                                    },
+                                    "subTotal":
+                                    {
+                                        "type": "Basic",
+                                        "name":"BigDecimal"
+                                    },
+                                    "originalSubTotal":
+                                    {
+                                        "type": "Basic",
+                                        "name":"BigDecimal"
+                                    },
+                                    "subTotalDiscounted":
+                                    {
+                                        "type": "Basic",
+                                        "name":"boolean"
+                                    },
+                                    "priceDiscounted":
+                                    {
+                                        "type": "List",
+                                        "name":"boolean"
+                                    },
+                                    "promotionList":
+                                    {
+                                        "type": "Array",
+                                        "struct": {
+                                            "id":
+                                            {
+                                                "type": "Basic",
+                                                "name":"String"
+                                            },
+                                            "name":
+                                            {
+                                                "type": "Basic",
+                                                "name":"String"
+                                            },
+                                            "selectable":
+                                            {
+                                                "type": "Basic",
+                                                "name":"boolean"
+                                            },
+                                            "selected":
+                                            {
+                                                "type": "Basic",
+                                                "name":"boolean"
+                                            }
+                                        }
+                                    },
+                                    "couponList":
+                                    {
+                                        "type": "Array",
+                                        "struct":{
+                                            "name":
+                                            {
+                                                "type": "Basic",
+                                                "name":"String"
+                                            },
+                                            "selectable":
+                                            {
+                                                "type": "Basic",
+                                                "name":"boolean"
+                                            },
+                                            "selected":
+                                            {
+                                                "type": "Basic",
+                                                "name":"boolean"
+                                            }
+                                        }
+                                    },
+                                    "specList":
+                                    {
+                                        "type": "Array",
+                                        "struct":{
+                                            "serialVersionUID":
+                                            {
+                                                "type": "Basic",
+                                                "name":"long"
+                                            }
+                                        }
+                                    }
+                                },
+                                "outputParamStruct": {
+                                    "ok":
+                                    {
+                                        "type": "Basic",
+                                        "name": "null"
+                                    }
+                                }
+                                },
+                                {   "name": "POST:/cancelAllItems", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ],
+                                    "inputParamStruct": {
+                                    },
+                                    "outputParamStruct": {
+                                        "status":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "message":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "redirectUrl":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "data":
+                                        {
+                                            "type": "Basic",
+                                            "struct":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "items":
+                                                {
+                                                    "type": "Array",
+                                                    "struct":
+                                                    {
+                                                        "prodName":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "weight":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalPrice":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "price":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "prodImg":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "productOnSale":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "subTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalSubTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "subTotalDiscounted":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "priceDiscounted":
+                                                        {
+                                                            "type": "List",
+                                                            "name":"boolean"
+                                                        },
+                                                        "promotionList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "id":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "couponList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "specList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "serialVersionUID":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"long"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "totalPrice":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "BigDecimal"
+                                                },
+                                                "totalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "selectedTotalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            },
+                                        },
+                                        "STATUS_UNAUTHORIZED":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "OKResponse": {
+                                            "data": {
+                                                "type": "Basic",
+                                                "name": "Object"
+                                            }
+                                        },
+                                        "ErrorResponse": {
+                                            "errorCode": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            },
+                                            "errorMessage": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            }
+                                        }
+                                    }
+                                },
+                                {   "name": "POST:/cancelItem", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "message":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "redirectUrl":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "data":
+                                        {
+                                            "type": "Basic",
+                                            "struct":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "items":
+                                                {
+                                                    "type": "Array",
+                                                    "struct":
+                                                    {
+                                                        "prodName":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "weight":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalPrice":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "price":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "prodImg":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "productOnSale":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "subTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalSubTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "subTotalDiscounted":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "priceDiscounted":
+                                                        {
+                                                            "type": "List",
+                                                            "name":"boolean"
+                                                        },
+                                                        "promotionList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "id":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "couponList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "specList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "serialVersionUID":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"long"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "totalPrice":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "BigDecimal"
+                                                },
+                                                "totalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "selectedTotalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            },
+                                        },
+                                        "STATUS_UNAUTHORIZED":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "OKResponse": {
+                                            "data": {
+                                                "type": "Basic",
+                                                "name": "Object"
+                                            }
+                                        },
+                                        "ErrorResponse": {
+                                            "errorCode": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            },
+                                            "errorMessage": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            }
+                                        }
+                                    }
+                                },
+                                {   "name": "GET:/minicart", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ],
+                                    "inputParamStruct": {
+                                    },
+                                    "outputParamStruct": {
+                                        "status":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "message":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "redirectUrl":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "data":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Object"
+                                        },
+                                        "STATUS_UNAUTHORIZED":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "OKResponse": {
+                                            "data": {
+                                                "type": "Basic",
+                                                "name": "Object"
+                                            }
+                                        },
+                                        "ErrorResponse": {
+                                            "errorCode": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            },
+                                            "errorMessage": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            }
+                                        }
+                                    }
+                                },
+                                {   "name": "POST:/changeQuantity", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "quantity":
+                                        {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "message":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "redirectUrl":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "data":
+                                        {
+                                            "type": "Basic",
+                                            "struct":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "items":
+                                                {
+                                                    "type": "Array",
+                                                    "struct":
+                                                    {
+                                                        "prodName":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "weight":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalPrice":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "price":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "prodImg":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "productOnSale":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "subTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalSubTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "subTotalDiscounted":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "priceDiscounted":
+                                                        {
+                                                            "type": "List",
+                                                            "name":"boolean"
+                                                        },
+                                                        "promotionList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "id":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "couponList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "specList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "serialVersionUID":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"long"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "totalPrice":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "BigDecimal"
+                                                },
+                                                "totalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "selectedTotalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            },
+                                        },
+                                        "STATUS_UNAUTHORIZED":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "OKResponse": {
+                                            "data": {
+                                                "type": "Basic",
+                                                "name": "Object"
+                                            }
+                                        },
+                                        "ErrorResponse": {
+                                            "errorCode": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            },
+                                            "errorMessage": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            }
+                                        }
+                                    }
+                                },
+                                {   "name": "GET:/checkoutItems", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ],
+                                    "inputParamStruct": {
+                                    },
+                                    "outputParamStruct": {
+                                        "status":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "message":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "redirectUrl":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "data":
+                                        {
+                                            "type": "Array",
+                                            "struct":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "items":
+                                                {
+                                                    "type": "Array",
+                                                    "struct":
+                                                    {
+                                                        "prodName":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "weight":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalPrice":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "price":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "prodImg":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "productOnSale":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "subTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalSubTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "subTotalDiscounted":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "priceDiscounted":
+                                                        {
+                                                            "type": "List",
+                                                            "name":"boolean"
+                                                        },
+                                                        "promotionList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "id":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "couponList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "specList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "serialVersionUID":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"long"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "totalPrice":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "BigDecimal"
+                                                },
+                                                "totalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "selectedTotalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            },
+                                        },
+                                        "STATUS_UNAUTHORIZED":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "OKResponse": {
+                                            "data": {
+                                                "type": "Basic",
+                                                "name": "Object"
+                                            }
+                                        },
+                                        "ErrorResponse": {
+                                            "errorCode": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            },
+                                            "errorMessage": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            }
+                                        }
+                                    }
+                                },
+                                {   "name": "GET:/clear", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ],
+                                    "inputParamStruct": {
+                                    },
+                                    "outputParamStruct": {
+                                        "ok":
+                                        {
+                                            "type": "Basic",
+                                            "name": "null"
+                                        }
+                                    }
+                                },
+                                {   "name": "GET:/mycart", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ],
+                                    "inputParamStruct": {
+                                    },
+                                    "outputParamStruct": {
+                                        "status":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "message":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "redirectUrl":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "data":
+                                        {
+                                            "type": "Basic",
+                                            "struct":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "items":
+                                                {
+                                                    "type": "Array",
+                                                    "struct":
+                                                    {
+                                                        "prodName":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "weight":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalPrice":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "price":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "prodImg":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "productOnSale":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "subTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalSubTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "subTotalDiscounted":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "priceDiscounted":
+                                                        {
+                                                            "type": "List",
+                                                            "name":"boolean"
+                                                        },
+                                                        "promotionList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "id":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "couponList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "specList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "serialVersionUID":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"long"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "totalPrice":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "BigDecimal"
+                                                },
+                                                "totalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "selectedTotalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            },
+                                        },
+                                        "STATUS_UNAUTHORIZED":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "OKResponse": {
+                                            "data": {
+                                                "type": "Basic",
+                                                "name": "Object"
+                                            }
+                                        },
+                                        "ErrorResponse": {
+                                            "errorCode": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            },
+                                            "errorMessage": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            }
+                                        }
+                                    }
+                                },
+                                {   "name": "POST:/removeItem", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "id":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "message":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "redirectUrl":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "data":
+                                        {
+                                            "type": "Basic",
+                                            "struct":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "items":
+                                                {
+                                                    "type": "Array",
+                                                    "struct":
+                                                    {
+                                                        "prodName":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "weight":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalPrice":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "price":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "prodImg":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "productOnSale":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "subTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalSubTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "subTotalDiscounted":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "priceDiscounted":
+                                                        {
+                                                            "type": "List",
+                                                            "name":"boolean"
+                                                        },
+                                                        "promotionList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "id":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "couponList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "specList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "serialVersionUID":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"long"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "totalPrice":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "BigDecimal"
+                                                },
+                                                "totalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "selectedTotalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            },
+                                        },
+                                        "STATUS_UNAUTHORIZED":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "OKResponse": {
+                                            "data": {
+                                                "type": "Basic",
+                                                "name": "Object"
+                                            }
+                                        },
+                                        "ErrorResponse": {
+                                            "errorCode": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            },
+                                            "errorMessage": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            }
+                                        }
+                                    }
+                                },
+                                {   "name": "POST:/selectAllItems", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "id":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "message":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "redirectUrl":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "data":
+                                        {
+                                            "type": "Basic",
+                                            "struct":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "items":
+                                                {
+                                                    "type": "Array",
+                                                    "struct":
+                                                    {
+                                                        "prodName":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "weight":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalPrice":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "price":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "prodImg":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "productOnSale":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "subTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalSubTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "subTotalDiscounted":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "priceDiscounted":
+                                                        {
+                                                            "type": "List",
+                                                            "name":"boolean"
+                                                        },
+                                                        "promotionList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "id":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "couponList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "specList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "serialVersionUID":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"long"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "totalPrice":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "BigDecimal"
+                                                },
+                                                "totalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "selectedTotalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            },
+                                        },
+                                        "STATUS_UNAUTHORIZED":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "OKResponse": {
+                                            "data": {
+                                                "type": "Basic",
+                                                "name": "Object"
+                                            }
+                                        },
+                                        "ErrorResponse": {
+                                            "errorCode": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            },
+                                            "errorMessage": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            }
+                                        }
+                                    }
+                                },
+                                {   "name": "POST:/selectItem", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "status":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "message":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "redirectUrl":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "data":
+                                        {
+                                            "type": "Basic",
+                                            "struct":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "items":
+                                                {
+                                                    "type": "Array",
+                                                    "struct":
+                                                    {
+                                                        "prodName":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "weight":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalPrice":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "price":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "prodImg":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"String"
+                                                        },
+                                                        "productOnSale":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "subTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "originalSubTotal":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"BigDecimal"
+                                                        },
+                                                        "subTotalDiscounted":
+                                                        {
+                                                            "type": "Basic",
+                                                            "name":"boolean"
+                                                        },
+                                                        "priceDiscounted":
+                                                        {
+                                                            "type": "List",
+                                                            "name":"boolean"
+                                                        },
+                                                        "promotionList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct": {
+                                                                "id":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "couponList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "name":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"String"
+                                                                },
+                                                                "selectable":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                },
+                                                                "selected":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"boolean"
+                                                                }
+                                                            }
+                                                        },
+                                                        "specList":
+                                                        {
+                                                            "type": "Array",
+                                                            "struct":{
+                                                                "serialVersionUID":
+                                                                {
+                                                                    "type": "Basic",
+                                                                    "name":"long"
+                                                                }
+                                                            }
+                                                        }
+                                                    }
+                                                },
+                                                "totalPrice":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "BigDecimal"
+                                                },
+                                                "totalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "selectedTotalAmount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            },
+                                        },
+                                        "STATUS_UNAUTHORIZED":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        },
+                                        "OKResponse": {
+                                            "data": {
+                                                "type": "Basic",
+                                                "name": "Object"
+                                            }
+                                        },
+                                        "ErrorResponse": {
+                                            "errorCode": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            },
+                                            "errorMessage": {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            }
+                                        }
+                                    }
+                                },
+
+                            ],
+                            "call": [
+                                {
+                                    "targetMicroservices": "CartService", // 目标微服务的name
+                                    "interfaceName": "myCart", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CartService", // 目标微服务的name
+                                    "interfaceName": "populateCart", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CartService", // 目标微服务的name
+                                    "interfaceName": "cartSummary", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CartService", // 目标微服务的name
+                                    "interfaceName": "addItem", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CartService", // 目标微服务的name
+                                    "interfaceName": "removeItem", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CartService", // 目标微服务的name
+                                    "interfaceName": "updateQuantity", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CartService", // 目标微服务的name
+                                    "interfaceName": "select", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CartService", // 目标微服务的name
+                                    "interfaceName": "selectAll", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CartService", // 目标微服务的name
+                                    "interfaceName": "cancel", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CartService", // 目标微服务的name
+                                    "interfaceName": "cancelAll", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CartService", // 目标微服务的name
+                                    "interfaceName": "getSelectedItems", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "ProductService", // 目标微服务的name
+                                    "interfaceName": "load", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "ProductSpecService", // 目标微服务的name
+                                    "interfaceName": "listProductSpecs", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CartController.java"
+                                    ]
+                                }
+                            ],
+                            // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件
+                            "publish": [],
+                            "subscribe": [
+                                {
+                                    "name":"ProductCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/ProductListener.java"
+                                },
+                                {
+                                    "name":"UserLoginEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/ProductListener.java"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "bigfans-cloud-service-search", // 微服务的名字，用于唯一标识这个系统中的微服务
+                            "path": "bigfans-cloud-service-search", // 微服务所在的目录位置（相对于代码仓）
+                            "otherPaths": [ // 一个微服务也可能会被拆分成多个模块实现，可能会对应到多个目录
+                            ],
+                            "interface": [
+                                {
+                                    "name": "GET:/brands", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/api/BaseController.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "keyword":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "catId":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "cp":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "struct":
+                                            {
+                                                "name":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "logo":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "categoryId":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "recommended":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Boolean"
+                                                },
+                                                "description":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "orderNum":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/categories", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/api/CategorySearchApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "keyword":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "cp":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "struct":
+                                            {
+                                                "name":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "parentId":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "imagePath":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "level":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "orderNum":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                },
+                                                "showInNav":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Boolean"
+                                                },
+                                                "showInHome":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Boolean"
+                                                },
+                                                "description":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/hotSearch", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/api/HotSearchApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "type":"Array",
+                                            "name": "String"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/search", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/api/ProductSearchApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "keyword":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "catId":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "brandId":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "filters":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "priceRange":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "orderBy":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        },
+                                        "cp":
+                                        {
+                                            "type": "Basic",
+                                            "name":"Integer"
+                                        }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/mlt", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/api/RecommendApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "SearchResult":
+                                        {
+                                            "serialVersionUID":
+                                            {
+                                                "type": "Basic",
+                                                "name":"long"
+                                            },
+                                            "data":
+                                            {
+                                                "type": "Array",
+                                                "name":"T"
+                                            },
+                                            "totHitis":
+                                            {
+                                                "type": "Basic",
+                                                "name":"Long"
+                                            },
+                                            "aggregationList":
+                                            {
+                                                "type": "Array",
+                                                "struct":
+                                                {
+                                                    "name":
+                                                    {
+                                                        "type": "Basic",
+                                                        "name":"String"
+                                                    },
+                                                    "key":
+                                                    {
+                                                        "type": "Basic",
+                                                        "name":"String"
+                                                    },
+                                                    "docCount":
+                                                    {
+                                                        "type": "Basic",
+                                                        "name":"long"
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/searchTips", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/api/TagSearchApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "keyword":
+                                        {
+                                            "type": "Basic",
+                                            "name":"String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "type": "Array",
+                                            "struct":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "name":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "relatedCount":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "call": [
+                                {
+                                    "targetMicroservices": "BrandService", // 目标微服务的name
+                                    "interfaceName": "search", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/api/BaseController.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CategoryService", // 目标微服务的name
+                                    "interfaceName": "search", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/CategorySearchApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "HotSearchService", // 目标微服务的name
+                                    "interfaceName": "hotSearch", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/HotSearchApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "ProductSearchService", // 目标微服务的name
+                                    "interfaceName": "searchProduct", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/ProductSearchApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CategoryService", // 目标微服务的name
+                                    "interfaceName": "getById", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/ProductSearchApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "BrandService", // 目标微服务的name
+                                    "interfaceName": "getById", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/ProductSearchApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "CatalogServiceClient", // 目标微服务的name
+                                    "interfaceName": "getAttributesByIdList", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/ProductSearchApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "HotSearchService", // 目标微服务的name
+                                    "interfaceName": "put", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/ProductSearchApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "RecommendService", // 目标微服务的name
+                                    "interfaceName": "moreLikeThis", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/RecommendApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "TagSearchService", // 目标微服务的name
+                                    "interfaceName": "searchTagByKeyword", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/api/TagSearchApi.java"
+                                    ]
+                                },
+                            ],
+                            // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件
+                            "publish": [],
+                            "subscribe": [
+                                {
+                                    "name":"BrandCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/BrandListener.java"
+                                },
+                                {
+                                    "name":"CategoryCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/CategoryListener.java"
+                                },
+                                {
+                                    "name":"OrderCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/OrderListener.java"
+                                },
+                                {
+                                    "name":"ProductCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/ProductListener.java"
+                                },
+                                {
+                                    "name":"TagCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/TagListener.java"
+                                }
+                            ]
+                        },
+                        {
+                            "name": "bigfans-cloud-service-user", // 微服务的名字，用于唯一标识这个系统中的微服务
+                            "path": "bigfans-cloud-service-user", // 微服务所在的目录位置（相对于代码仓）
+                            "otherPaths": [ // 一个微服务也可能会被拆分成多个模块实现，可能会对应到多个目录
+                            ],
+                            "interface": [
+                                {
+                                    "name": "POST:/address", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "Address":
+                                        {
+                                            "serialVersionUID":
+                                            {
+                                                "type": "Basic",
+                                                "name": "long"
+                                            },
+                                            "getDetailAddress":
+                                            {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            }
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "Address":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "getDetailAddress":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/address", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "addressId":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "Address":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "getDetailAddress":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/myAddress/{addressId}", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "addressId":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "Address":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "getDetailAddress":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/myAddresses", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "type": "Array",
+                                            "Address":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "getDetailAddress":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/address/remove", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "addressId":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "type": "Basic",
+                                            "name":"null"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/address/update", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                            "Address":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "getDetailAddress":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "Address":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "getDetailAddress":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/favorites", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/FavoritesApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "prodId":
+                                        {
+                                            "type":"Basic",
+                                            "name": "String"
+                                        }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "type": "Basic",
+                                            "name": null
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/currentUser", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "userToken":
+                                        {
+                                            "type":"Basic",
+                                            "name": "String"
+                                        }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "CurrentUser":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "uid":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "account":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "loginTime":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Date"
+                                                },
+                                                "invalid":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "boolean"
+                                                },
+                                                "ip":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "nickname":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "loggedIn":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "boolean"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/login", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "User":
+                                        {
+                                            "serialVersionUID":
+                                            {
+                                                "type":"Basic",
+                                                "name": "long"
+                                            },
+                                            "verificationCode":
+                                            {
+                                                "type":"Basic",
+                                                "name": "String"
+                                            },
+                                            "confirmedPassword":
+                                            {
+                                                "type":"Basic",
+                                                "name": "String"
+                                            },
+                                            "agreeTerms":
+                                            {
+                                                "type":"Basic",
+                                                "name": "Boolean"
+                                            },
+                                            "returnUrl":
+                                            {
+                                                "type":"Basic",
+                                                "name": "String"
+                                            },
+                                            "rememberMe":
+                                            {
+                                                "type":"Basic",
+                                                "name": "boolean"
+                                            }
+
+                                        }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "type":"Basic",
+                                            "name": "null"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "GET:/logout", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "type":"Basic",
+                                            "name": "null"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/register", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "User":
+                                        {
+                                            "serialVersionUID":
+                                            {
+                                                "type":"Basic",
+                                                "name": "long"
+                                            },
+                                            "verificationCode":
+                                            {
+                                                "type":"Basic",
+                                                "name": "String"
+                                            },
+                                            "confirmedPassword":
+                                            {
+                                                "type":"Basic",
+                                                "name": "String"
+                                            },
+                                            "agreeTerms":
+                                            {
+                                                "type":"Basic",
+                                                "name": "Boolean"
+                                            },
+                                            "returnUrl":
+                                            {
+                                                "type":"Basic",
+                                                "name": "String"
+                                            },
+                                            "rememberMe":
+                                            {
+                                                "type":"Basic",
+                                                "name": "boolean"
+                                            }
+
+                                        }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "type":"Basic",
+                                            "name": "null"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/requestVCode", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "mobile":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "type":"Basic",
+                                            "name": "null"
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/validateMobile", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "mobile":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "accountExist":
+                                            {
+                                                "type": "Basic",
+                                                "name": "boolean"
+                                            }
+                                        }
+                                    }
+                                }
+                            ],
+                            "call": [
+                                {
+                                    "targetMicroservices": "AddressService", // 目标微服务的name
+                                    "interfaceName": "listByUser", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "AddressService", // 目标微服务的name
+                                    "interfaceName": "getUserAddress", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "AddressService", // 目标微服务的name
+                                    "interfaceName": "create", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "AddressService", // 目标微服务的name
+                                    "interfaceName": "update", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "AddressService", // 目标微服务的name
+                                    "interfaceName": "listByUser", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "AddressService", // 目标微服务的name
+                                    "interfaceName": "delete", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                    ]
+                                },
+
+                                {
+                                    "targetMicroservices": "FavoritesService", // 目标微服务的name
+                                    "interfaceName": "create", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/FavoritesApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "UserService", // 目标微服务的name
+                                    "interfaceName": "login", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/UserApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "UserService", // 目标微服务的name
+                                    "interfaceName": "accountExist", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/UserApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "UserService", // 目标微服务的name
+                                    "interfaceName": "exist", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/UserApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "UserService", // 目标微服务的name
+                                    "interfaceName": "regist", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/UserApi.java"
+                                    ]
+                                }
+
+                            ],
+                            // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件
+                            "publish": [],
+                            "subscribe": [
+                                {
+                                    "name":"BrandCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/BrandListener.java"
+                                },
+                                {
+                                    "name":"CategoryCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/CategoryListener.java"
+                                },
+                                {
+                                    "name":"OrderCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/OrderListener.java"
+                                },
+                                {
+                                    "name":"ProductCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/ProductListener.java"
+                                },
+                                {
+                                    "name":"TagCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/TagListener.java"
+                                }
+                            ]
                         }
                     ],
                     "topics": [ // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件

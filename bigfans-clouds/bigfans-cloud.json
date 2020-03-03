@@ -6,7 +6,7 @@
             "arcs": [ // 架构相关数据
                 {
                     "version": { // 指明这个数据是哪个版本的
-                        "sha": "5241351c7709f9428b0f1ce7c95e6202d3b88b9b",
+                        "sha": "5241351c7709f9428b0f1ce7c95e6202d3b88b9b"
                     },
                     "modules": [ // 代码仓可能包含多个模块
                         {
@@ -1219,6 +1219,37 @@
                                             }
                                         }
                                     }
+                                },
+                                {
+                                    "name": "GET:/order-service/myorders", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "bigfans-cloud-service-order\src\main\java\com\\bigfans\orderservice\api\OrderApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "cp": {
+                                            "type": "Basic",
+                                            "name": "Long"
+                                        }
+                                    },
+                                    "outputParamStruct": {
+                                        "order": {
+                                            "type": "Basic",
+                                            "struct": {
+                                                "hasExpired": {
+                                                    "type": "Basic",
+                                                    "name": "Boolean"
+                                                },
+                                                "leftTime": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "items": {
+                                                    "type": "Array",
+                                                    "name": "OrderItem"
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             ],
                             "call": [ // 这个微服务调用了哪些微服务的哪些接口
@@ -1249,6 +1280,412 @@
                                 }
                             ]
                         },
+                        {
+                    "name": "bigfans-cloud-service-pricing",
+                    // 微服务的名字，用于唯一标识这个系统中的微服务
+                    "path": "bigfans-cloud-service-pricing",
+                    // 微服务所在的目录位置（相对于代码仓）
+                    "otherPaths": [
+                        // 一个微服务也可能会被拆分成多个模块实现，可能会对应到多个目录
+                    ],
+                    "interfaces": [
+                        // 微服务对外提供的接口
+                        {
+                            "name": "POST:/coupon/acquire",
+                            //接口名，用于标识这个微服务中的不同接口
+                            "filePaths": [
+                                // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                "bigfans-cloud-service-pricing\src\main\java\com\\bigfans\pricingservice\api\CouponApi.java"
+                            ],
+                            "inputParamStruct": {
+                                // 入参的结构
+                                "couponId": {
+                                    // 嵌套结构体
+                                    "type": "Basic",
+                                    // Basic, Array
+                                    "name": "String"
+                                }
+                            },
+                            "outputParamStruct": {
+                                // 接口返回的数据结构，格式与inputParamStruct相同
+                                "object": {
+                                    "type": "Basic",
+                                    "name": "null"
+                                }
+                            }
+                        },
+                        {
+                            "name": "GET:/coupons/{id}",
+                            //接口名，用于标识这个微服务中的不同接口
+                            "filePaths": [
+                                // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                "bigfans-cloud-service-pricing\src\main\java\com\\bigfans\pricingservice\api\CouponApi.java"
+                            ],
+                            "inputParamStruct": {
+                                // 入参的结构
+                                "couponId": {
+                                    // 嵌套结构体
+                                    "type": "Basic",
+                                    // Basic, Array
+                                    "name": "String"
+                                }
+                            },
+                            "outputParamStruct": {
+                                // 接口返回的数据结构，格式与inputParamStruct相同
+                                "Coupon": {
+                                    "type": "Basic",
+                                    "struct": {
+                                        "name": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "selectable": {
+                                            "type": "Basic",
+                                            "name": "boolean"
+                                        },
+                                        "selected": {
+                                            "type": "Basic",
+                                            "name": "boolean"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "POST:/calculateCart",
+                            //接口名，用于标识这个微服务中的不同接口
+                            "filePaths": [
+                                // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                "bigfans-cloud-service-pricing\src\main\java\com\\bigfans\pricingservice\api\PricingApi.java"
+                            ],
+                            "inputParamStruct": {
+                                // 入参的结构
+                                "CartPricingDto": {
+                                    // 嵌套结构体
+                                    "type": "Basic",
+                                    // Basic, Array
+                                    "struct": {
+                                        "userId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "calculateItems": {
+                                            "type": "Array",
+                                            "name": "List"
+                                        }
+                                    }
+                                }
+                            },
+                            "outputParamStruct": {
+                                // 接口返回的数据结构，格式与inputParamStruct相同
+                                "CartPricingResultDto": {
+                                    "type": "Basic",
+                                    "struct": {
+                                        "promotionMap": {
+                                            "type": "Array",
+                                            "name": "Map"
+                                        },
+                                        "couponMap": {
+                                            "type": "Array",
+                                            "name": "Map"
+                                        },
+                                        "priceMap": {
+                                            "type": "Array",
+                                            "name": "Map"
+                                        },
+                                        "originalTotalPrice": {
+                                            "type": "Basic",
+                                            "name": "BigDecimal"
+                                        },
+                                        "totalPrice": {
+                                            "type": "Basic",
+                                            "name": "BigDecimal"
+                                        }
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "POST:/calculateOrder",
+                            //接口名，用于标识这个微服务中的不同接口
+                            "filePaths": [
+                                // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                "bigfans-cloud-service-pricing\src\main\java\com\\bigfans\pricingservice\api\PricingApi.java"
+                            ],
+                            "inputParamStruct": {
+                                // 入参的结构
+                                "OrderPricingDto": {
+                                    // 嵌套结构体
+                                    "type": "Basic",
+                                    // Basic, Array
+                                    "struct": {
+                                        "userId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "items": {
+                                            "type": "Array",
+                                            "name": "List"
+                                        },
+                                        "usedCouponId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "usedPoints": {
+                                            "type": "Basic",
+                                            "name": "Float"
+                                        }
+                                    }
+                                }
+                            },
+                            "outputParamStruct": {
+                                // 接口返回的数据结构，格式与inputParamStruct相同
+                                "OrderPricingResultDto": {
+                                    "type": "Basic",
+                                    "struct": {
+                                        "originalTotalPrice": {
+                                            "type": "Basic",
+                                            "name": "BigDecimal"
+                                        },
+                                        "totalPrice": {
+                                            "type": "Basic",
+                                            "name": "BigDecimal"
+                                        },
+                                        "prodTotalQuantity": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "freight": {
+                                            "type": "Basic",
+                                            "name": "BigDecimal"
+                                        },
+                                        "couponDeductionTotal": {
+                                            "type": "Basic",
+                                            "name": "BigDecimal"
+                                        },
+                                        "pointDeductionTotal": {
+                                            "type": "Basic",
+                                            "name": "BigDecimal"
+                                        },
+                                        "balanceDeductionTotal": {
+                                            "type": "Basic",
+                                            "name": "BigDecimal"
+                                        },
+                                        "promotionMap": {
+                                            "type": "Array",
+                                            "name": "Map"
+                                        },
+                                        "priceMap": {
+                                            "type": "Array",
+                                            "name": "Map"
+                                        }
+
+                                    }
+                                }
+                            }
+                        },
+                        {
+                            "name": "GET:/product/{prodId}",
+                            //接口名，用于标识这个微服务中的不同接口
+                            "filePaths": [
+                                // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                "bigfans-cloud-service-pricing\src\main\java\com\\bigfans\pricingservice\api\PricingApi.java"
+                            ],
+                            "inputParamStruct": {
+                                // 入参的结构
+                                "prodId": {
+                                    // 嵌套结构体
+                                    "type": "Basic",
+                                    // Basic, Array
+                                    "name": "String"
+                                }
+                            },
+                            "outputParamStruct": {
+                                // 接口返回的数据结构，格式与inputParamStruct相同
+                                "Object": {
+                                    "type": "Basic",
+                                    "name": "null"
+                                }
+                            }
+                        },
+                        {
+                            "name": "POST:/products",
+                            //接口名，用于标识这个微服务中的不同接口
+                            "filePaths": [
+                                // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                "bigfans-cloud-service-pricing\src\main\java\com\\bigfans\pricingservice\api\PricingApi.java"
+                            ],
+                            "inputParamStruct": {
+                                // 入参的结构
+                                "prodId": {
+                                    // 嵌套结构体
+                                    "type": "Array",
+                                    // Basic, Array
+                                    "name": "String"
+                                }
+                            },
+                            "outputParamStruct": {
+                                // 接口返回的数据结构，格式与inputParamStruct相同
+                                "Object": {
+                                    "type": "Basic",
+                                    "name": "null"
+                                }
+                            }
+                        },
+                        {
+                            "name": "POST:/promotion/product",
+                            //接口名，用于标识这个微服务中的不同接口
+                            "filePaths": [
+                                // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                "bigfans-cloud-service-pricing\src\main\java\com\\bigfans\pricingservice\api\PromotionApi.java"
+                            ],
+                            "inputParamStruct": {
+                                // 入参的结构
+                                "Promotion": {
+                                    // 嵌套结构体
+                                    "type": "Array",
+                                    // Basic, Array
+                                    "struct": {
+                                        "id": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "name": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "selectable": {
+                                            "type": "Basic",
+                                            "name": "boolean"
+                                        },
+                                        "selected": {
+                                            "type": "Basic",
+                                            "name": "boolean"
+                                        }
+                                    }
+                                }
+                            },
+                            "outputParamStruct": {
+                                // 接口返回的数据结构，格式与inputParamStruct相同
+                                "Object": {
+                                    "type": "Basic",
+                                    "name": "null"
+                                }
+                            }
+                        }
+                    ]
+                },
+                        {
+                    "name": "bigfans-cloud-service-review",
+                    // 微服务的名字，用于唯一标识这个系统中的微服务
+                    "path": "bigfans-cloud-service-review",
+                    // 微服务所在的目录位置（相对于代码仓）
+                    "otherPaths": [
+                        // 一个微服务也可能会被拆分成多个模块实现，可能会对应到多个目录
+                    ],
+                    "interfaces": [
+                        // 微服务对外提供的接口
+                        {
+                            "name": "POST:/comment",
+                            //接口名，用于标识这个微服务中的不同接口
+                            "filePaths": [
+                                // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                "bigfans-cloud-service-review\src\main\java\com\\bigfans\\reviewservice\api\CommentApi.java"
+                            ],
+                            "inputParamStruct": {
+                                // 入参的结构
+                                "CreateCommentForm": {
+                                    // 嵌套结构体
+                                    "type": "Basic",
+                                    // Basic, Array
+                                    "struct": {
+                                        "orderId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "orderItemId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "productId": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "rate": {
+                                            "type": "Basic",
+                                            "name": "Integer"
+                                        },
+                                        "content": {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        },
+                                        "isAnonymous": {
+                                            "type": "Basic",
+                                            "name": "Boolean"
+                                        }
+                                    }
+                                }
+                            },
+                            "outputParamStruct": {
+                                // 接口返回的数据结构，格式与inputParamStruct相同
+                                "object": {
+                                    "type": "Basic",
+                                    "name": "null"
+                                }
+                            }
+                        },
+                        {
+                            "name": "Request:/countComment",
+                            //接口名，用于标识这个微服务中的不同接口
+                            "filePaths": [
+                                // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                "bigfans-cloud-service-review\src\main\java\com\\bigfans\\reviewservice\api\CommentApi.java"
+                            ],
+                            "inputParamStruct": {
+                                // 入参的结构
+                                "prodId": {
+                                    // 嵌套结构体
+                                    "type": "Basic",
+                                    // Basic, Array
+                                    "name": "String"
+                                }
+                            },
+                            "outputParamStruct": {
+                                // 接口返回的数据结构，格式与inputParamStruct相同
+                                "prodId": {
+                                    "type": "Basic",
+                                    "name": "String"
+                                }
+                            }
+                        },
+                        {
+                            "name": "GET:/orderItemSurveys",
+                            //接口名，用于标识这个微服务中的不同接口
+                            "filePaths": [
+                                // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                "bigfans-cloud-service-review\src\main\java\com\\bigfans\\reviewservice\api\OrderItemSurveyApi.java"
+                            ],
+                            "inputParamStruct": {
+                                // 入参的结构
+                                "orderId": {
+                                    // 嵌套结构体
+                                    "type": "Basic",
+                                    // Basic, Array
+                                    "name": "String"
+                                }
+                            },
+                            "outputParamStruct": {
+                                // 接口返回的数据结构，格式与inputParamStruct相同
+                                "OrderItemSurvey": {
+                                    "type": "Array",
+                                    "struct": {
+
+                                    }
+                                }
+                            }
+                        }
+                    ]
+                },
                         {
                             "name": "bigfans-cloud-service-notification", // 微服务的名字，用于唯一标识这个系统中的微服务
                             "path": "bigfans-cloud-service-notification", // 微服务所在的目录位置（相对于代码仓）
@@ -4996,7 +5433,7 @@
                                 "orderId": {
                                     "type": "Basic",
                                     "name": "String"
-                                },
+                                }
                             }
                         },
                         {
@@ -5008,7 +5445,7 @@
                                 "orderId": {
                                     "type": "Basic",
                                     "name": "String"
-                                },
+                                }
                             }
                         },
                         {

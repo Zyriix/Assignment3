@@ -5460,23 +5460,23 @@
                             "subscribe": [
                                 {
                                     "name":"BrandCreatedEvent",
-                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/BrandListener.java"
+                                    "filePaths": "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/listener/BrandListener.java"
                                 },
                                 {
                                     "name":"CategoryCreatedEvent",
-                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/CategoryListener.java"
+                                    "filePaths": "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/listener/CategoryListener.java"
                                 },
                                 {
                                     "name":"OrderCreatedEvent",
-                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/OrderListener.java"
+                                    "filePaths": "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/listener/OrderListener.java"
                                 },
                                 {
                                     "name":"ProductCreatedEvent",
-                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/ProductListener.java"
+                                    "filePaths": "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/listener/ProductListener.java"
                                 },
                                 {
                                     "name":"TagCreatedEvent",
-                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/TagListener.java"
+                                    "filePaths": "bigfans-cloud-service-search/src/main/java/com/bigfans/searchservice/listener/TagListener.java"
                                 }
                             ]
                         },
@@ -5918,6 +5918,98 @@
                                             }
                                         }
                                     }
+                                },
+                                {
+                                    "name": "GET:/users/{userId}", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserManageApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "userId":
+                                        {
+                                            "type": "Basic",
+                                            "name": "String"
+                                        }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "User":
+                                            {
+                                                "serialVersionUID":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "long"
+                                                },
+                                                "verificationCode":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "confirmedPassword":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "agreeTerms":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "Boolean"
+                                                },
+                                                "returnUrl":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                },
+                                                "rememberMe":
+                                                {
+                                                    "type": "Basic",
+                                                    "name": "boolean"
+                                                }
+                                            }
+                                        }
+                                    }
+                                },
+                                {
+                                    "name": "POST:/useProperty", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserOrderApi.java"
+                                    ],
+                                    "inputParamStruct": {
+                                        "UsePropertyForm":
+                                        {
+                                            "orderId":
+                                            {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            },
+                                            "couponId":
+                                            {
+                                                "type": "Basic",
+                                                "name": "String"
+                                            },
+                                            "points":
+                                            {
+                                                "type": "Basic",
+                                                "name": "Float"
+                                            },
+                                            "balance":
+                                            {
+                                                "type": "Basic",
+                                                "name": "BigDecimal"
+                                            }
+                                        }
+
+                                    },
+                                    "outputParamStruct": {
+                                        "data":
+                                        {
+                                            "type":"Basic",
+                                            "name": "null"
+
+                                        }
+                                    }
                                 }
                             ],
                             "call": [
@@ -5925,42 +6017,42 @@
                                     "targetMicroservices": "AddressService", // 目标微服务的name
                                     "interfaceName": "listByUser", // 所调用的接口的name
                                     "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
-                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
                                     ]
                                 },
                                 {
                                     "targetMicroservices": "AddressService", // 目标微服务的name
                                     "interfaceName": "getUserAddress", // 所调用的接口的name
                                     "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
-                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
                                     ]
                                 },
                                 {
                                     "targetMicroservices": "AddressService", // 目标微服务的name
                                     "interfaceName": "create", // 所调用的接口的name
                                     "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
-                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
                                     ]
                                 },
                                 {
                                     "targetMicroservices": "AddressService", // 目标微服务的name
                                     "interfaceName": "update", // 所调用的接口的name
                                     "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
-                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
                                     ]
                                 },
                                 {
                                     "targetMicroservices": "AddressService", // 目标微服务的name
                                     "interfaceName": "listByUser", // 所调用的接口的name
                                     "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
-                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
                                     ]
                                 },
                                 {
                                     "targetMicroservices": "AddressService", // 目标微服务的name
                                     "interfaceName": "delete", // 所调用的接口的name
                                     "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
-                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/AddressApi.java"
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/AddressApi.java"
                                     ]
                                 },
 
@@ -5968,35 +6060,49 @@
                                     "targetMicroservices": "FavoritesService", // 目标微服务的name
                                     "interfaceName": "create", // 所调用的接口的name
                                     "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
-                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/FavoritesApi.java"
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/FavoritesApi.java"
                                     ]
                                 },
                                 {
                                     "targetMicroservices": "UserService", // 目标微服务的name
                                     "interfaceName": "login", // 所调用的接口的name
                                     "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
-                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/UserApi.java"
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserApi.java"
                                     ]
                                 },
                                 {
                                     "targetMicroservices": "UserService", // 目标微服务的name
                                     "interfaceName": "accountExist", // 所调用的接口的name
                                     "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
-                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/UserApi.java"
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserApi.java"
                                     ]
                                 },
                                 {
                                     "targetMicroservices": "UserService", // 目标微服务的name
                                     "interfaceName": "exist", // 所调用的接口的name
                                     "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
-                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/UserApi.java"
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserApi.java"
                                     ]
                                 },
                                 {
                                     "targetMicroservices": "UserService", // 目标微服务的name
                                     "interfaceName": "regist", // 所调用的接口的name
                                     "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
-                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/searchservice/api/UserApi.java"
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "UserService", // 目标微服务的name
+                                    "interfaceName": "load", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserManageApi.java"
+                                    ]
+                                },
+                                {
+                                    "targetMicroservices": "UserPropertyService", // 目标微服务的name
+                                    "interfaceName": "useProperty", // 所调用的接口的name
+                                    "positions": [ // 出现调用的文件相对代码仓的路径，可能有多个
+                                        "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/api/UserOrderApi.java"
                                     ]
                                 }
 
@@ -6005,24 +6111,16 @@
                             "publish": [],
                             "subscribe": [
                                 {
-                                    "name":"BrandCreatedEvent",
-                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/BrandListener.java"
+                                    "name":"CouponCreatedEvent",
+                                    "filePaths": "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/listener/CouponListener.java"
                                 },
                                 {
-                                    "name":"CategoryCreatedEvent",
-                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/CategoryListener.java"
+                                    "name":"OrderCreateFailureEvent",
+                                    "filePaths": "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/listener/OrderListener.java"
                                 },
                                 {
-                                    "name":"OrderCreatedEvent",
-                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/OrderListener.java"
-                                },
-                                {
-                                    "name":"ProductCreatedEvent",
-                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/ProductListener.java"
-                                },
-                                {
-                                    "name":"TagCreatedEvent",
-                                    "filePaths": "bigfans-cloud-service-cart/src/main/java/com/bigfans/cartservice/listener/TagListener.java"
+                                    "name":"OrderCanceledEvent",
+                                    "filePaths": "bigfans-cloud-service-user/src/main/java/com/bigfans/userservice/listener/OrderListener.java"
                                 }
                             ]
                         }

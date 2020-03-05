@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.bigfans.reviewservice.dao.impl.UserDAOImpl">
+
+	<!-- 用户登录 -->
+	<select id="load" parameterType="User" resultType="User">
+		select
+			id AS id
+			,email AS email
+			,account as account
+			,nickname AS nickname
+			,status as status
+			,avatar as avatar
+		from
+			User
+		<where>
+			<if test="id != null">
+			id = #{id}
+			</if>
+			<if test="id == null">
+			(
+			account=#{account}
+			OR email=#{account}
+			)
+			</if>
+			<!-- 已经激活的用户 -->
+			AND status = 1
+			AND deleted=0
+		</where>
+	</select>
+	
+</mapper>

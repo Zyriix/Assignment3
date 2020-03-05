@@ -1,0 +1,59 @@
+server:
+  port: 8808
+spring:
+  application:
+    name: pricing-service
+  datasource:
+    initialize: false
+#  zipkin:
+#    base-url: http://127.0.0.1:7002
+eureka:
+  instance:
+    instance-id: ${spring.application.name}:${server.port}
+    preferIpAddress: true
+    health-check-url-path: /application
+    status-page-url: http://${spring.cloud.client.hostname}:${server.port}/swagger-ui.html
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    registry-fetch-interval-seconds: 20
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    eureka-server-connect-timeout-seconds: 5
+
+## master
+master:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3307/bigfans_pricing?autoReconnect=true&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: admin
+    driverClassName: com.mysql.jdbc.Driver
+
+## cluster
+cluster1:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3307/bigfans_pricing?autoReconnect=true&useUnicode=true&characterEncoding=utf8
+    username: root
+    password: admin
+    driverClassName: com.mysql.jdbc.Driver
+
+## kafka
+kafka:
+  servers: 127.0.0.1:9092
+  groupId: ${spring.application.name}
+  clientId: ${spring.application.name}-client
+
+## redis
+#Redis服务器IP
+jedis:
+  host: 127.0.0.1
+#Redis的端口号
+  port: 6379
+#访问密码
+  auth:
+#控制一个pool最多有多少个状态为idle(空闲的)的jedis实例，默认值是8。
+  max_idle: 10
+  timeout: 1000
+#在borrow一个jedis实例时，是否提前进行validate操作；如果为true，则得到的jedis实例均是可用的；
+  test_on_borrow: false
+  default_db_index: 5

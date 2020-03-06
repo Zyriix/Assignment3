@@ -1,0 +1,133 @@
+{
+    "projectName": "xxx", // 项目名
+    "repositories": [
+        {
+            "gitUrl": "https://gitee.com/dafanshudl/bigfans-cloud.git",
+            "arcs":[ // 架构相关数据
+                {
+                    "version": { // 指明这个数据是哪个版本的
+                        "sha": "5241351c7709f9428b0f1ce7c95e6202d3b88b9b",
+                    },
+                    "modules": [ // 代码仓可能包含多个模块
+                        {
+                            "path": "bigfans-cloud-service-order", // 模块目录相对于代码仓根目录的路径
+                            "language": "Java", // Java
+                            "packages": [{"name": "com.bigfans.orderservice.api.auth", "dependency": ["com.bigfans.framework"]}, {"name": "com.bigfans.orderservice.api.clients", "dependency": ["com.bigfans.framework.utils", "com.bigfans.model.dto.order", "com.bigfans.orderservice.model", "com.bigfans.api.clients", "com.bigfans.orderservice", "com.bigfans.orderservice.model.entity", "com.bigfans.framework"]}, {"name": "com.bigfans.orderservice.api.interceptor", "dependency": ["com.bigfans.framework.annotations", "com.bigfans.framework.utils", "com.bigfans.framework.web", "com.bigfans.framework.exception", "com.bigfans.framework.model", "com.bigfans.framework", "com.bigfans"]}, {"name": "com.bigfans.orderservice.api", "dependency": ["com.bigfans.orderservice.api.form", "com.bigfans.framework.dao", "com.bigfans.framework.annotations", "com.bigfans.orderservice.exception", "com.bigfans.orderservice.api.clients", "com.bigfans.model.dto.order", "com.bigfans.orderservice.model", "com.bigfans.framework.web", "com.bigfans.orderservice.model.entity", "com.bigfans.framework.model", "com.bigfans.framework.kafka", "com.bigfans.framework", "com.bigfans.orderservice.service"]}, {"name": "com.bigfans.orderservice", "dependency": ["com.bigfans.orderservice.api.auth", "com.bigfans.orderservice.exception", "com.bigfans.framework.web", "com.bigfans.framework.exception", "com.bigfans.framework.kafka", "com.bigfans.framework", "com.bigfans"]}, {"name": "com.bigfans.orderservice.config", "dependency": ["com.bigfans.orderservice.api.interceptor", "com.bigfans.framework.dao", "com.bigfans.framework.event", "com.bigfans.framework.redis", "com.bigfans.framework.kafka"]}, {"name": "com.bigfans.orderservice.dao", "dependency": ["com.bigfans.framework.dao", "com.bigfans.orderservice.model"]}, {"name": "com.bigfans.orderservice.dao.impl", "dependency": ["com.bigfans.framework.dao", "com.bigfans.orderservice.dao", "com.bigfans.orderservice.model", "com.bigfans.orderservice.model.entity", "com.bigfans.framework.model"]}, {"name": "com.bigfans.orderservice.events", "dependency": ["com.bigfans.model.event.order", "com.bigfans.framework.kafka", "com.bigfans.framework.event"]}, {"name": "com.bigfans.orderservice.exception", "dependency": ["com.bigfans.framework.exception"]}, {"name": "com.bigfans.orderservice.listeners", "dependency": ["com.bigfans.framework.dao", "com.bigfans.model.event.comment", "com.bigfans.model.event", "com.bigfans.orderservice.model", "com.bigfans.model.event.payment", "com.bigfans.framework.kafka", "com.bigfans.orderservice.api.clients", "com.bigfans.orderservice.service"]}, {"name": "com.bigfans.orderservice.model", "dependency": ["com.bigfans.framework.model", "com.bigfans.framework.utils", "com.bigfans.model.dto.order", "com.bigfans.orderservice.model.entity"]}, {"name": "com.bigfans.orderservice.model.entity", "dependency": ["com.bigfans.framework.model"]}, {"name": "com.bigfans.orderservice.ordertracker", "dependency": ["com.bigfans.framework.utils"]}, {"name": "com.bigfans.orderservice.service", "dependency": ["com.bigfans.framework.model", "com.bigfans.framework.dao", "com.bigfans.orderservice.model"]}, {"name": "com.bigfans.orderservice.service.impl", "dependency": ["com.bigfans.framework.dao", "com.bigfans.orderservice.exception", 
+"com.bigfans.framework.event", "com.bigfans.framework.utils", "com.bigfans.orderservice.dao", "com.bigfans.orderservice.model", "com.bigfans.model.event.order", "com.bigfans.orderservice.model.entity", "com.bigfans.framework.model", "com.bigfans.orderservice.api.clients", "com.bigfans.framework", "com.bigfans.orderservice.service"]}]
+                        },
+						{
+						
+						}
+						
+                    ],
+                    "microservices": [ // 包含哪些微服务
+                        {
+                            "name": "xxx", // 微服务的名字，用于唯一标识这个系统中的微服务
+                            "path": "xxx", // 微服务所在的目录位置（相对于代码仓）
+                            "otherPaths":[ // 一个微服务也可能会被拆分成多个模块实现，可能会对应到多个目录
+                                "xxx"
+                            ],
+                            "interfaces":[  // 微服务对外提供的接口
+                                {
+                                    "name": "xxx", //接口名，用于标识这个微服务中的不同接口
+                                    "filePaths": [ // 定义接口的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "xxx"
+                                    ],
+                                    "inputParamStruct": { // 入参的结构
+                                        "a": { // 嵌套结构体
+                                            "type": "Basic", // Basic, Array
+                                            "struct": {
+                                                "b": {
+                                                    "type": "Basic",
+                                                    "name": "String"
+                                                }
+                                            }
+                                        },
+                                        "a2": {
+                                            "type": "Array",
+                                            "struct": {
+                                                "b": {
+                                                    "type": "Basic",
+                                                    "name": "Integer"
+                                                }
+                                            }
+                                        },
+                                        "b": { 
+                                            "type": "Basic",
+                                            "name": "Integer" // 整数，不区分字节长度，包括了 int或者long等
+                                        },
+                                        "b2": { 
+                                            "type": "Array", // 表示是一个数组，数组中的类型是Integer
+                                            "name": "Integer"
+                                        },
+                                        "c": { 
+                                            "type": "Basic",
+                                            "name": "Float" // 浮点数，不区分精确度，包括 float或者double等
+                                        },
+                                        "d": { 
+                                            "type": "Basic",
+                                            "name": "String" // 字符
+                                        },
+                                        "e": { 
+                                            "type": "Basic",
+                                            "name": "Bool" // 布尔值
+                                        },
+                                        "f": { 
+                                            "type": "Basic",
+                                            "name": "Enum" // 枚举类型，即输入为确定的几个值中的一个
+                                        },
+                                        "g": { 
+                                            "type": "Basic",
+                                            "name": "Byte" // 字节
+                                        },
+                                        "h": {
+                                            "type": "Other",
+                                            "name": "xxx" // 如果遇到其他无法划分到上面的类型，写在这里
+                                        }
+                                    },
+                                    "outputParamStruct": { // 接口返回的数据结构，格式与inputParamStruct相同
+                                    }
+                                }
+                            ],
+                            "call":[ // 这个微服务调用了哪些微服务的哪些接口
+                                {
+                                    "targetMicroservices": "xxx", // 目标微服务的name
+                                    "interfaceName": "XXX", // 所调用的接口的name
+                                    "positions": [// 出现调用的文件相对代码仓的路径，可能有多个
+                                        "xxx" 
+                                    ]
+                                }
+                            ],
+                            // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件
+                            "publish":[
+                                {
+                                    "name": "xxx", //topic或者事件的名字
+                                    "filePaths": [ // 发布这个topic或者事件的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "xxx"
+                                    ]
+                                }
+                            ],
+                            "subscribe":[
+                                {
+                                    "name": "xxx", //topic或者事件的名字
+                                    "filePaths": [ // 订阅这个topic或者事件的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                                        "xxx"
+                                    ]
+                                }
+                            ]
+                        }
+                    ],
+                    "topics": [ // 如果微服务使用了发布订阅的通信模式，一般服务会发布和订阅一些topic或者事件
+                        {
+                            "name": "xxx", //topic或者事件的名字
+                            "filePaths": [], // 定义这个topic或者事件的文件位置，相对于代码仓的路径，可能会涉及多个文件
+                            "inputParamStruct":{ // 输入数据的格式，同interfaces中的数据结构
+
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
